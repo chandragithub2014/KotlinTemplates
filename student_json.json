@@ -1,0 +1,8 @@
+{
+    "students": [
+        {"firstName": "John", "lastName": "Doe","registrationId":"1","group":"B.Tech"}, 
+        {"firstName": "Anna", "lastName": "Smith","registrationId":"2","group":"B.Tech"}, 
+        {"firstName": "Peter", "lastName": "Jones","registrationId":"3","group":"B.Tech"},
+        {"firstName": "Peter1", "lastName": "Jones1","registrationId":"4","group":"B.Tech"}
+    ]
+}

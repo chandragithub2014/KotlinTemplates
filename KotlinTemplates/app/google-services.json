@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "630474653983",
+    "firebase_url": "https://kotlintemplates.firebaseio.com",
+    "project_id": "kotlintemplates",
+    "storage_bucket": "kotlintemplates.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630474653983:android:7fb7045ac6930767",
+        "android_client_info": {
+          "package_name": "com.kotlintemplates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630474653983-dq61dim88tbo7d4tnfdedkt5dnkvnuag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbIgRtA2OSUQe4_Do-CO1MlAJhlyA_cEk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

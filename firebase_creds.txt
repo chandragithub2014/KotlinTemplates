@@ -1,0 +1,25 @@
+gservices credentials
+
+gservices4me@gmail.com
+CHANDRA@2016
+
+
+
+
+email :     gtofirebase2016@gmail.com
+Password : 
+COGNIZANT@2016
+
+
+PlayStore FireBase
+playstoreservices2016@gmail.com
+GOOGLE@2016
+CHANDRA@2017
+
+
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
