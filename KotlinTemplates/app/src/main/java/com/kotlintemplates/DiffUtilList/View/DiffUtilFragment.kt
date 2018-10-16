@@ -2,7 +2,10 @@ package com.kotlintemplates.DiffUtilList.View
 
 
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +13,8 @@ import android.view.ViewGroup
 import android.widget.MultiAutoCompleteTextView
 import com.google.firebase.database.*
 import com.kotlintemplates.DiffUtilList.Model.DiffUtilModel
+import com.kotlintemplates.Launcher.View.TemplateAdapter
+import com.kotlintemplates.Launcher.interfaces.ClickListener
 
 import com.kotlintemplates.R
 
@@ -24,7 +29,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class DiffUtilFragment : Fragment() {
+class DiffUtilFragment : Fragment(),ClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -45,9 +50,11 @@ class DiffUtilFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         myView =  inflater.inflate(R.layout.fragment_diff_util, container, false)
+        initViews(myView)
+        setAdapter()
         dataBaseReference.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onDataChange(p0: DataSnapshot) {
@@ -57,6 +64,7 @@ class DiffUtilFragment : Fragment() {
                 }
                 if(studentList!!.size>0){
                     Log.d("DiffUtilragment","StudentList Size:::"+studentList!!.size)
+                    diffUtilAdapter.setListInfo(studentList!!)
                     for (i in 0 until studentList!!.size) {
                         val diffUtilModel:DiffUtilModel = studentList!!.get(i)
                         Log.d("DiffUtilFragment",diffUtilModel.registrationId)
@@ -65,15 +73,58 @@ class DiffUtilFragment : Fragment() {
             }
         });
 
+        addList!!.setOnClickListener({
+            populateData()
+        });
+
         return myView
     }
+    private fun populateData(){
+        dataBaseReference.addListenerForSingleValueEvent(object :ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
 
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                studentList  = mutableListOf<DiffUtilModel>()
+                for (studentSnapShot in p0!!.getChildren()) {
+                    studentList!!.add(studentSnapShot.getValue(DiffUtilModel::class.java)!!)
+                }
+                if(studentList!!.size>0){
+                    Log.d("DiffUtilragment","StudentList Size:::"+studentList!!.size)
+                    diffUtilAdapter.updateStudentInfo(studentList!!)
+                    for (i in 0 until studentList!!.size) {
+                        val diffUtilModel:DiffUtilModel = studentList!!.get(i)
+                        Log.d("DiffUtilFragment",diffUtilModel.registrationId)
+                    }
+                }
+            }
+        });
+    }
+    private var diffList: RecyclerView?=null;
+    private var addList:FloatingActionButton?=null
+    fun initViews(view:View){
+        diffList = view.findViewById<RecyclerView>(R.id.diffutil_list)
+        addList = view.findViewById<FloatingActionButton>(R.id.fabAddList)
+    }
     fun initFireBase(){
         dataBaseReference = FirebaseDatabase.getInstance().getReference("students")
 
     }
+    lateinit var diffUtilAdapter: DiffUtilAdapter
 
+    private fun setAdapter(){
+        //    launchList!!.adapter(TemplateAdapter(this,this))
+        diffUtilAdapter = DiffUtilAdapter(activity!!.applicationContext,this)
+        val layoutManager = LinearLayoutManager(activity)
+     //   launchList!!.layoutManager = layoutManager
+     //   launchList!!.adapter = templateAdapter
+        //    launchList!!.adapter = TemplateAdapter(activity,this)
+    }
 
+    override fun onClick(itemName: String, position: Int) {
+
+    }
 
     companion object {
         /**
