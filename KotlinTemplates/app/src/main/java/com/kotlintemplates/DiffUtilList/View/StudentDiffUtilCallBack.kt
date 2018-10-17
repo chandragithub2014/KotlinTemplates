@@ -8,12 +8,16 @@ import com.kotlintemplates.Launcher.interfaces.ClickListener
 class StudentDiffUtilCallBack(val oldStudentList: MutableList<DiffUtilModel>, val newStudentList: MutableList<DiffUtilModel>) : DiffUtil.Callback() {
 
 
-    override fun areContentsTheSame(p0: Int, p1: Int): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+       val oldStudent:DiffUtilModel = oldStudentList.get(oldItemPosition);
+        val newStudent:DiffUtilModel = newStudentList.get(newItemPosition);
+
+        return oldStudent.firstName.equals(newStudent.firstName)
     }
 
-    override fun areItemsTheSame(p0: Int, p1: Int): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldStudentList.get(oldItemPosition).registrationId == newStudentList.get(
+                newItemPosition).registrationId
     }
 
     override fun getNewListSize(): Int {

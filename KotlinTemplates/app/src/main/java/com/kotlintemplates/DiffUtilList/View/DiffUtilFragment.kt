@@ -117,9 +117,9 @@ class DiffUtilFragment : Fragment(),ClickListener {
         //    launchList!!.adapter(TemplateAdapter(this,this))
         diffUtilAdapter = DiffUtilAdapter(activity!!.applicationContext,this)
         val layoutManager = LinearLayoutManager(activity)
-     //   launchList!!.layoutManager = layoutManager
-     //   launchList!!.adapter = templateAdapter
-        //    launchList!!.adapter = TemplateAdapter(activity,this)
+        diffList!!.layoutManager = layoutManager
+        diffList!!.adapter = diffUtilAdapter
+
     }
 
     override fun onClick(itemName: String, position: Int) {

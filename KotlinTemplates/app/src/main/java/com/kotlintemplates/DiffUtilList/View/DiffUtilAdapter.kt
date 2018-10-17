@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.template_list_item.view.*
 
 class DiffUtilAdapter(val context: Context, val clickListener: ClickListener ) : RecyclerView.Adapter<DiffUtilAdapter.DiffUtilViewHolder>(){
 
-   private var  diffUtilModelList:MutableList<DiffUtilModel>?=null
+  // private var  diffUtilModelList:MutableList<DiffUtilModel>?= MutableList<DiffUtilModel>()
+     var diffUtilModelList = mutableListOf<DiffUtilModel>()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): DiffUtilViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.template_list_item,p0,false)
@@ -32,6 +33,7 @@ class DiffUtilAdapter(val context: Context, val clickListener: ClickListener ) :
 
      fun setListInfo(diffUtilModelList: MutableList<DiffUtilModel>){
        this.diffUtilModelList = diffUtilModelList
+       notifyDataSetChanged()
     }
 
      fun updateStudentInfo(updatedDiffUtilModelList: List<DiffUtilModel>){
