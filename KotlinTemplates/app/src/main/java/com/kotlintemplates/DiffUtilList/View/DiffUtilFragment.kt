@@ -1,6 +1,8 @@
 package com.kotlintemplates.DiffUtilList.View
 
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
@@ -13,7 +15,10 @@ import android.view.ViewGroup
 import android.widget.MultiAutoCompleteTextView
 import com.google.firebase.database.*
 import com.kotlintemplates.DiffUtilList.Model.DiffUtilModel
+import com.kotlintemplates.DiffUtilList.ViewModel.DiffUtilViewModel
+import com.kotlintemplates.Launcher.Model.TemplateModel
 import com.kotlintemplates.Launcher.View.TemplateAdapter
+import com.kotlintemplates.Launcher.ViewModel.TemplateViewModel
 import com.kotlintemplates.Launcher.interfaces.ClickListener
 
 import com.kotlintemplates.R
@@ -36,6 +41,7 @@ class DiffUtilFragment : Fragment(),ClickListener {
     lateinit var dataBaseReference: DatabaseReference
     lateinit var myView: View
     var studentList: MutableList<DiffUtilModel>?=null
+    lateinit var diffUtilViewModel: DiffUtilViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +50,11 @@ class DiffUtilFragment : Fragment(),ClickListener {
             param2 = it.getString(ARG_PARAM2)
         }
         initFireBase()
+        initViewModel()
+    }
+
+    private  fun initViewModel(){
+        diffUtilViewModel = ViewModelProviders.of(activity!!).get(DiffUtilViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +63,7 @@ class DiffUtilFragment : Fragment(),ClickListener {
         myView =  inflater.inflate(R.layout.fragment_diff_util, container, false)
         initViews(myView)
         setAdapter()
-        dataBaseReference.addListenerForSingleValueEvent(object :ValueEventListener{
+       /* dataBaseReference.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
 
             }
@@ -71,15 +82,31 @@ class DiffUtilFragment : Fragment(),ClickListener {
                     }
                 }
             }
-        });
+        });*/
+        fetchAndPopulateDataFromViewModel(false)
 
         addList!!.setOnClickListener({
-            populateData()
+            //populateData()
+            fetchAndPopulateDataFromViewModel(true)
         });
 
         return myView
     }
-    private fun populateData(){
+
+    private fun fetchAndPopulateDataFromViewModel(isUpdate : Boolean){
+        diffUtilViewModel.fetchStudentInfoFromFireBase().observe(this,object: Observer<List<DiffUtilModel>>{
+            override fun onChanged(t: List<DiffUtilModel>?) {
+                if(t!!.size>0){
+                    if(!isUpdate) {
+                        diffUtilAdapter.setListInfo(t.toMutableList())
+                    }else{
+                        diffUtilAdapter.updateStudentInfo(t.toMutableList())
+                    }
+                }
+            }
+        })
+    }
+   /* private fun populateData(){
         dataBaseReference.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
 
@@ -100,7 +127,7 @@ class DiffUtilFragment : Fragment(),ClickListener {
                 }
             }
         });
-    }
+    }*/
     private var diffList: RecyclerView?=null;
     private var addList:FloatingActionButton?=null
     fun initViews(view:View){

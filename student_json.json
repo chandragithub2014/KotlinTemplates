@@ -4,6 +4,8 @@
         {"firstName": "Anna", "lastName": "Smith","registrationId":"2","group":"B.Tech"}, 
         {"firstName": "Peter", "lastName": "Jones","registrationId":"3","group":"B.Tech"},
         {"firstName": "Peter1", "lastName": "Jones1","registrationId":"4","group":"B.Tech"},
-          {"firstName": "Peter2", "lastName": "Jones2","registrationId":"5","group":"B.Tech"}
+          {"firstName": "Peter2", "lastName": "Jones2","registrationId":"5","group":"B.Tech"}, 
+{"firstName": "Peter3", "lastName": "Jones3","registrationId":"6","group":"B.Tech"}
+
     ]
 }
