@@ -11,7 +11,8 @@ import com.kotlintemplates.Launcher.Model.TemplateModel
 import com.kotlintemplates.Launcher.ViewModel.TemplateViewModel
 import com.kotlintemplates.Launcher.interfaces.ClickListener
 import com.kotlintemplates.R
-import kotlinx.android.synthetic.main.template_list_item.view.*
+import kotlinx.android.synthetic.main.diff_util_list_item.view.*
+
 
 class DiffUtilAdapter(val context: Context, val clickListener: ClickListener ) : RecyclerView.Adapter<DiffUtilAdapter.DiffUtilViewHolder>(){
 
@@ -19,7 +20,7 @@ class DiffUtilAdapter(val context: Context, val clickListener: ClickListener ) :
      var diffUtilModelList = mutableListOf<DiffUtilModel>()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): DiffUtilViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.template_list_item,p0,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.diff_util_list_item,p0,false)
         return DiffUtilViewHolder(view)
     }
 
@@ -61,7 +62,11 @@ class DiffUtilAdapter(val context: Context, val clickListener: ClickListener ) :
         }
 
            fun setData(diffUtilModel: DiffUtilModel?,pos: Int){
-               itemView.template_item.text = diffUtilModel!!.registrationId
+              // itemView.template_item.text = "Registration Id:"+diffUtilModel!!.registrationId
+               itemView.first_name.text = "First Name:"+diffUtilModel!!.firstName
+               itemView.template_item.text =  "Registration Id:"+diffUtilModel!!.registrationId
+               itemView.last_name.text =  "Last Name:"+diffUtilModel!!.lastName
+               itemView.course_group.text = "Group:"+diffUtilModel!!.group
                this.diffUtilModel = diffUtilModel
                this.currentPosition = pos
            }
