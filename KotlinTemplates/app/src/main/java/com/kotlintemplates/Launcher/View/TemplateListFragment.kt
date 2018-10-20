@@ -23,6 +23,7 @@ import com.kotlintemplates.Login.view.LoginActivity
 
 
 import com.kotlintemplates.R
+import com.kotlintemplates.SimpleLazyList.Views.SimplyLazyListActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -103,6 +104,9 @@ class TemplateListFragment : Fragment(),ClickListener {
         }else if(position==1){
             var difUtilIntent : Intent = Intent(activity,DiffUtilActivity::class.java)
             startActivity(difUtilIntent)
+        }else if(position==2) {
+            var lazyListIntent: Intent = Intent(activity, SimplyLazyListActivity::class.java)
+            startActivity(lazyListIntent)
         }
     }
 

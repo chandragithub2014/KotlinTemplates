@@ -24,6 +24,7 @@ class TemplateViewModel : AndroidViewModel {
         val templateInfo = listOf(
                 TemplateModel("Login"),
                 TemplateModel("DiffUtilList"),
+                TemplateModel("Simple Lazy List"),
                 TemplateModel("Tab")
         )
     }
