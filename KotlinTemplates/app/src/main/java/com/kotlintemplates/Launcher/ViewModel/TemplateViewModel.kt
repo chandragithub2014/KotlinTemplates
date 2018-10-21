@@ -25,6 +25,7 @@ class TemplateViewModel : AndroidViewModel {
                 TemplateModel("Login"),
                 TemplateModel("DiffUtilList"),
                 TemplateModel("Simple Lazy List"),
+                TemplateModel("Grid Lazy List"),
                 TemplateModel("Tab")
         )
     }

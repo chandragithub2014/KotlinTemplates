@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.kotlintemplates.DiffUtilList.View.DiffUtilActivity
+import com.kotlintemplates.GridList.View.GridListActivity
 import com.kotlintemplates.Launcher.Model.TemplateModel
 import com.kotlintemplates.Launcher.ViewModel.TemplateViewModel
 import com.kotlintemplates.Launcher.interfaces.ClickListener
@@ -106,6 +107,9 @@ class TemplateListFragment : Fragment(),ClickListener {
             startActivity(difUtilIntent)
         }else if(position==2) {
             var lazyListIntent: Intent = Intent(activity, SimplyLazyListActivity::class.java)
+            startActivity(lazyListIntent)
+        }else if(position==3) {
+            var lazyListIntent: Intent = Intent(activity, GridListActivity::class.java)
             startActivity(lazyListIntent)
         }
     }
