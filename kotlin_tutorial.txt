@@ -1,0 +1,121 @@
+What is Kotlin?
+Kotlin is a open source programming language introduced by JetBrains, the official designer of the most intelligent Java IDE, named Intellij IDEA.
+This is a strongly statically typed language that runs on JVM.
+In 2017, Google announced Kotlin as an official language for android development.
+
+
+Advantages of Kotlin:
+
+(1)Easy Language
+  
+   Kotlin is a functional language and very easy to learn. 
+   The syntax is pretty much similar to Java, hence it is very easy to       remember. 
+   Kotlin is more expressive, which makes your code more readable and       understandable.
+
+(2)Concise
+   Kotlin is based on JVM and it is a functional language. 
+   It reduce lots of boiler plate code used in other programming languages.
+
+
+(3)Brand New
+   Kotlin is a brand new language that gives developers a fresh start. It is not a replacement of Java, though it is developed over JVM. It is accepted as the first official language of android development. Kotlin can be defined as - Kotlin = JAVA + extra updated new features.
+
+
+(4)Runtime and Performance
+
+(5)Interoperability
+
+
+
+Class Declaration in Kotlin:
+
+
+In Java:
+
+class MyClass {
+  private  String name = "Hello World";
+
+public void printName(){
+System.out.print(name);
+}
+  public static void main(String[] args){ 
+      MyClass myClass = new MyClass();
+     myClass.printName();
+    }
+}
+
+Kotlin:
+
+class MyClass{  
+
+  private var name:String = "Hello World"
+
+      fun printName(){ 
+             print(name)
+            }
+
+fun main(args: Array<String>) {
+   val obj = myClass() // create obj object of myClass class
+   obj.printMe()
+}
+}
+
+
+
+Difference:
+
+Variable Declaration in Kotlin:
+
+       var variableName:variableType
+
+Instance creation do not require new keyboard as in Java
+
+
+Variable Declaration in Kotlin:
+2 Types:
+(1) Using 'var'  : Variable declared using Var can be edited .
+
+(2) Using 'val'  : Variable declared using Val can't be edited .Its Read only
+
+
+Constructors in Kotlin:
+A kotlin class can have single Primary Constructor and multiple secondary constructors.
+
+primary constructor can be declared at class header level
+
+Ex: class Employee(val firstName: String, var age: Int) {
+   // class body
+}
+
+Secondary Constructor
+=====================
+secondary constructor is created using the “constructor” keyword.
+Required whenever you want to create more than one constructor in Kotlin.
+Any number of secondary constructors can be created, however, all of those constructors should call the primary constructor directly or indirectly.
+
+Example:
+//Primary Constructor
+class HUman(val firstName: String, var age: Int) {
+        val message:String  = "Hello!!!"
+}
+
+Initialization code in Primary Constructor can be done using init block
+class HUman(val firstName: String, var age: Int) {
+       
+init{
+     print("FirstName==$firstName")
+}
+}
+   
+   //Secondary Constructor
+   constructor(name : String , age :Int ,message :String):this(name,age) {
+   }
+}
+
+
+
+
+
+Constructor Overriding:
+=========================
+
