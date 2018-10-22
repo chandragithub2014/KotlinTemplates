@@ -25,6 +25,8 @@
         <activity android:name=".DiffUtilList.View.DiffUtilActivity" />
         <activity android:name=".SimpleLazyList.Views.SimplyLazyListActivity" />
         <activity android:name=".GridList.View.GridListActivity"></activity>
+        <activity android:name=".RoomRetrofitList.View.RetroRoomActivity"></activity>
+        <activity android:name=".KotlinTabs.Views.TabActivity"></activity>
     </application>
 
 </manifest>

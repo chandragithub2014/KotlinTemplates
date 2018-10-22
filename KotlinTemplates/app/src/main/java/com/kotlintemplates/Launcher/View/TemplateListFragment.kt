@@ -17,6 +17,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.kotlintemplates.DiffUtilList.View.DiffUtilActivity
 import com.kotlintemplates.GridList.View.GridListActivity
+import com.kotlintemplates.KotlinTabs.Views.TabActivity
 import com.kotlintemplates.Launcher.Model.TemplateModel
 import com.kotlintemplates.Launcher.ViewModel.TemplateViewModel
 import com.kotlintemplates.Launcher.interfaces.ClickListener
@@ -24,7 +25,9 @@ import com.kotlintemplates.Login.view.LoginActivity
 
 
 import com.kotlintemplates.R
+import com.kotlintemplates.RoomRetrofitList.View.RetroRoomActivity
 import com.kotlintemplates.SimpleLazyList.Views.SimplyLazyListActivity
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -111,6 +114,12 @@ class TemplateListFragment : Fragment(),ClickListener {
         }else if(position==3) {
             var lazyListIntent: Intent = Intent(activity, GridListActivity::class.java)
             startActivity(lazyListIntent)
+        }else if(position==4) {
+            var retroRoomIntent: Intent = Intent(activity, RetroRoomActivity::class.java)
+            startActivity(retroRoomIntent)
+        }else if(position==5) {
+            var tabIntent: Intent = Intent(activity, TabActivity::class.java)
+            startActivity(tabIntent)
         }
     }
 
