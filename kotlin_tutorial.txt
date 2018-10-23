@@ -9,8 +9,8 @@ Advantages of Kotlin:
 (1)Easy Language
   
    Kotlin is a functional language and very easy to learn. 
-   The syntax is pretty much similar to Java, hence it is very easy to       remember. 
-   Kotlin is more expressive, which makes your code more readable and       understandable.
+   The syntax is pretty much similar to Java, hence it is very easy to remember. 
+   Kotlin is more expressive, which makes your code more readable and understandable.
 
 (2)Concise
    Kotlin is based on JVM and it is a functional language. 
@@ -118,4 +118,142 @@ init{
 
 Constructor Overriding:
 =========================
+class Log {
+    constructor(data: String) {
+        // some code
+    }
+    constructor(data: String, numberOfData: Int) {
+        // some code
+    }
+}
+
+
+
+class Log {
+    constructor(data: String) {
+        // code
+    }
+    constructor(data: String, numberOfData: Int) {
+        // code
+    }
+}
+
+class AuthLog: Log {
+    constructor(data: String): super(data) {
+        // code
+    }
+    constructor(data: String, numberOfData: Int): super(data, numberOfData) {
+        // code
+    }
+}
+
+
+
+
+In Kotlin, you can also call a constructor from another constructor of the same class (like in Java) using this().
+class AuthLog: Log {
+    constructor(data: String): this(data, 10) {
+        // code
+    }
+    constructor(data: String, numberOfData: Int): super(data, numberOfData) {
+        // code
+    }
+}
+
+
+
+
+By default, classes in Kotlin are final.
+ If you are familiar with Java, you know that a final class cannot be subclassed. 
+By using the open annotation on a class, compiler allows you to derive new classes from it.
+
+
+Example Inheritence:
+open class Person(age: Int) {
+    // code for eating, talking, walking
+}
+
+class MathTeacher(age: Int): Person(age) {
+    // other features of math teacher
+}
+
+class Footballer(age: Int): Person(age) {
+    // other features of footballer
+}
+
+class Businessman(age: Int): Person(age) {
+    // other features of businessman
+}
+
+
+
+
+open class Person(age: Int, name: String) {
+    init {
+        println("My name is $name.")
+        println("My age is $age")
+    }
+}
+
+class MathTeacher(age: Int, name: String): Person(age, name) {
+
+    fun teachMaths() {
+        println("I teach in primary school.")
+    }
+}
+
+class Footballer(age: Int, name: String): Person(age, name) {
+    fun playFootball() {
+        println("I play for LA Galaxy.")
+    }
+}
+
+fun main(args: Array<String>) {
+    val t1 = MathTeacher(25, "Jack")
+    t1.teachMaths()
+
+    println()
+
+    val f1 = Footballer(29, "Christiano")
+    f1.playFootball()
+}
+
+
+Kotlin Data Class:
+There may arise a situation where you need to create a class solely to hold data.
+In such cases, you can mark the class as data to create a data class.
+Data Classes are immutable.
+
+
+For this class, the compiler automatically generates:
+
+- copy() function, equals() and hashCode() pair, and toString() form of the primary constructor
+- componentN() functions
+
+
+Example of Data Class:
+
+data class Student(val name: String, val place: String, var age: Int)
+
+Creating an Instance of a Data Class
+val student: Student = Student("John", "New York", 20)
+
+
+We can now access the members of Student:
+print(student.name) // "John"
+print(student.place) // "New York"
+print(student.age) // 20
+
+
+
+
+print the contents of the Data class using "toString()" method:
+print(student.toString())
+
+
+Copy() Function:
+Since our data classes are immutable, we must create a copy if we wish to change some data.
+if we wish to change the age of a student, this can be done by writing:
+val student: Student = Student("John", "New York", 20)
+val modifiedStudent = student.copy(age = 10)
 
