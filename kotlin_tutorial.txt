@@ -223,7 +223,7 @@ Kotlin Data Class:
 There may arise a situation where you need to create a class solely to hold data.
 In such cases, you can mark the class as data to create a data class.
 Data Classes are immutable.
-
+Although the properties of a data class can be mutable (declared using var), It’s strongly recommended to use immutable properties (declared using val) so as to keep the instances of the data class immutable.
 
 For this class, the compiler automatically generates:
 
@@ -256,4 +256,10 @@ Since our data classes are immutable, we must create a copy if we wish to change
 if we wish to change the age of a student, this can be done by writing:
 val student: Student = Student("John", "New York", 20)
 val modifiedStudent = student.copy(age = 10)
+
+
+
+
+Kotlin Important Points:
+https://www.journaldev.com/20567/kotlin-interview-questions
 
