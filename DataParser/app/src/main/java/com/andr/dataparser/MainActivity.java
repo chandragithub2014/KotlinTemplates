@@ -51,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Array","Answer Array:::"+ansAry[i]/*.substring(0,ansAry[i].indexOf("Ques:")+1)*/);
         }
 
-
-
-        
     }
 
     

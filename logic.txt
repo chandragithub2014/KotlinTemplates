@@ -1,0 +1,13 @@
+private void parseJSON(String info){
+    //    StringTokenizer token = new StringTokenizer(info, ".");
+        String[] ary = info.split("Ques:");
+        for(int i=1;i<ary.length;i++){
+            Log.d("Array","Qustion Array:::"+ary[i].substring(0,ary[i].indexOf("?")+1));
+        }
+
+        String[] ansAry = info.split("Ans:");
+        for(int i=1;i<ansAry.length;i++){
+            Log.d("Array","Answer Array:::"+ansAry[i]/*.substring(0,ansAry[i].indexOf("Ques:")+1)*/);
+        }
+
+    }
