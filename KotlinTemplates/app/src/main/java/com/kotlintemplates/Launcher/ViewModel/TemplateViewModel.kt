@@ -27,7 +27,9 @@ class TemplateViewModel : AndroidViewModel {
                 TemplateModel("Simple Lazy List"),
                 TemplateModel("Grid Lazy List"),
                 TemplateModel("WebService DB List"),
-                TemplateModel("Tab")
+                TemplateModel("Tab"),
+                TemplateModel("RoomDBForm")
+                //TemplateModel("RoomDBList"),
         )
     }
 }

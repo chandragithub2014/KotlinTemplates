@@ -25,6 +25,7 @@ import com.kotlintemplates.Login.view.LoginActivity
 
 
 import com.kotlintemplates.R
+import com.kotlintemplates.RoomDBList.View.NewEmployeeActivity
 import com.kotlintemplates.RoomRetrofitList.View.RetroRoomActivity
 import com.kotlintemplates.SimpleLazyList.Views.SimplyLazyListActivity
 
@@ -120,6 +121,10 @@ class TemplateListFragment : Fragment(),ClickListener {
         }else if(position==5) {
             var tabIntent: Intent = Intent(activity, TabActivity::class.java)
             startActivity(tabIntent)
+        }else if(position==6){
+           var roomDBForm:Intent  = Intent(activity,NewEmployeeActivity::class.java)
+            startActivity(roomDBForm)
+
         }
     }
 
