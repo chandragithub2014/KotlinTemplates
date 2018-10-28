@@ -33,7 +33,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class NewEmployeeFragment : Fragment(),View.OnClickListener {
+class AddNewEmployeeFragment : Fragment(),View.OnClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -95,7 +95,8 @@ class NewEmployeeFragment : Fragment(),View.OnClickListener {
                         +"EmpCountry:::"+empList[i].empCountry+"\n")
             }
          }*/
-        launchEmpList()
+        activity!!.supportFragmentManager.popBackStack()
+      //  launchEmpList()
         roomDbViewModel.getAllEmps().observe(this,object:Observer<List<EmployeeEntity>>{
             override fun onChanged(t: List<EmployeeEntity>?) {
                 if(t!=null && t.size>0){

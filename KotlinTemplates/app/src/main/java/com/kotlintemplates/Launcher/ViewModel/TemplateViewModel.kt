@@ -23,12 +23,14 @@ class TemplateViewModel : AndroidViewModel {
     object temlpateList{
         val templateInfo = listOf(
                 TemplateModel("Login"),
-                TemplateModel("DiffUtilList"),
+                TemplateModel("DiffUtilDBList"),
                 TemplateModel("Simple Lazy List"),
                 TemplateModel("Grid Lazy List"),
                 TemplateModel("WebService DB List"),
                 TemplateModel("Tab"),
-                TemplateModel("RoomDBForm")
+                TemplateModel("RoomDBForm"),
+                TemplateModel("DiffUtilListFireBase")
+
                 //TemplateModel("RoomDBList"),
         )
     }

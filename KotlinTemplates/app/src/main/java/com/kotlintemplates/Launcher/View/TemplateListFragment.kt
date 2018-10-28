@@ -26,6 +26,7 @@ import com.kotlintemplates.Login.view.LoginActivity
 
 import com.kotlintemplates.R
 import com.kotlintemplates.RoomDBList.View.NewEmployeeActivity
+import com.kotlintemplates.RoomDBList.View.RoomDBListActivity
 import com.kotlintemplates.RoomRetrofitList.View.RetroRoomActivity
 import com.kotlintemplates.SimpleLazyList.Views.SimplyLazyListActivity
 
@@ -107,8 +108,8 @@ class TemplateListFragment : Fragment(),ClickListener {
             var loginIntent : Intent = Intent(activity,LoginActivity::class.java)
             startActivity(loginIntent)
         }else if(position==1){
-            var difUtilIntent : Intent = Intent(activity,DiffUtilActivity::class.java)
-            startActivity(difUtilIntent)
+            var roomDBListIntent:Intent  = Intent(activity,RoomDBListActivity::class.java)
+            startActivity(roomDBListIntent)
         }else if(position==2) {
             var lazyListIntent: Intent = Intent(activity, SimplyLazyListActivity::class.java)
             startActivity(lazyListIntent)
@@ -124,7 +125,9 @@ class TemplateListFragment : Fragment(),ClickListener {
         }else if(position==6){
            var roomDBForm:Intent  = Intent(activity,NewEmployeeActivity::class.java)
             startActivity(roomDBForm)
-
+        }else if(position==7){
+            var difUtilIntent : Intent = Intent(activity,DiffUtilActivity::class.java)
+            startActivity(difUtilIntent)
         }
     }
 

@@ -27,8 +27,10 @@
         <activity android:name=".GridList.View.GridListActivity" />
         <activity android:name=".RoomRetrofitList.View.RetroRoomActivity" />
         <activity android:name=".KotlinTabs.Views.TabActivity" />
-        <activity android:name=".RoomDBList.View.NewEmployeeActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".RoomDBList.View.NewEmployeeActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".RoomDBList.View.RoomDBListActivity"></activity>
     </application>
 
 </manifest>

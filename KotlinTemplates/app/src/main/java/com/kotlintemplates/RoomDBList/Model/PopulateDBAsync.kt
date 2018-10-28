@@ -12,7 +12,7 @@ import android.os.AsyncTask
         }
 
         override fun doInBackground(vararg params: Void): Void? {
-            mDao.deleteAll()
+         //   mDao.deleteAll()
             return null
         }
     }
