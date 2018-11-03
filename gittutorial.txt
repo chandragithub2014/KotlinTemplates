@@ -175,3 +175,50 @@ nothing added to commit but untracked files present (use "git add" to track)
 E:\GitTutorial>
 
 
+
+wORKING With Remote Repository:
+
+Cloning 
+
+(1) git clone https://github.com/myRepo.git
+
+(2)To get the number of commits made based on email id. use shortlog
+ 
+Viewing commits:
+(3) What are the last commits made to repository
+	git show HEAD
+
+(4)
+E:\GitTest>git remote
+origin
+
+E:\GitTest>git remote -v
+origin  https://github.com/AndroidTemplates/ListViewer.git (fetch)
+origin  https://github.com/AndroidTemplates/ListViewer.git (push)
+
+(5) Displaying all branches in a repository
+git branch
+
+(6) To display Remote branches
+E:\GitTest>git branch -r
+
+(7)To display stable points , which means versions of ur repository
+use Tah
+git tag
+
+(8) Add local repository to remote
+git remote add origin https://github.com/chandragithub2014/gitpractice_app2.git
+
+(9) git fetch
+git fetch really only downloads new data from a remote repository - but it doesn't integrate any of this new data into your working files.
+(10) pulling from remote 
+  git pull
+git pull not only downloads new data; it also directly integrates it into your current working copy files
+
+
+Since "git pull" tries to merge remote changes with your local ones, a so-called "merge conflict" can occur. 
+Like for many other actions, it's highly recommended to start a "git pull" only with a clean working copy. This means that you should not have any uncommitted local changes before you pull. Use Git's Stash feature to save your local changes temporarily.
+
+
+
+
