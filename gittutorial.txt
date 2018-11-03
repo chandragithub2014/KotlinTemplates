@@ -219,6 +219,9 @@ git pull not only downloads new data; it also directly integrates it into your c
 Since "git pull" tries to merge remote changes with your local ones, a so-called "merge conflict" can occur. 
 Like for many other actions, it's highly recommended to start a "git pull" only with a clean working copy. This means that you should not have any uncommitted local changes before you pull. Use Git's Stash feature to save your local changes temporarily.
 
+(11) To tag remote 
+E:\KotlinTemplateWorks>git tag v1.0
+
 
 
 
