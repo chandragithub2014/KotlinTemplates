@@ -222,6 +222,55 @@ Like for many other actions, it's highly recommended to start a "git pull" only 
 (11) To tag remote 
 E:\KotlinTemplateWorks>git tag v1.0
 
+(12) to find all logs in oneline we use below command
+D:\ARGenius_Adal>git log --graph --oneline --all --decorate
 
+
+Creating local branches:
+
+(1) git branch feature1
+(2) To checkout branch
+       git checkout feature1
+(3) Rename a bracnh
+    git branch -m feature1 feature1ForBug
+(4)Force Delete a bracnh
+git branch -D feature1ForBug
+
+(5) To create and checkout a branch in a single line
+ git checkout -b feature2
+
+Recover branches:
+
+(1) git reflog
+       Gives references of all logs where HEAD as pointed.
+
+
+(2) git branch branchname headnumber(5a78cb)
+
+
+Stash changes:
+In order to save changes without commiting so that they can be committd later
+
+git stash
+
+
+Example:
+git checkout feature2
+echo "Feature2 changes" >> README.txt
+git stash
+git status
+   noting to commit.
+
+(3) To pullback stashed changes
+git stash apply
+Example:
+git checkout feature2
+   git stash apply
+
+
+(4) git stash list :  Saves all stashed changes
+(5) git stash pop : will pull back first time from stash changes and removes from stash list. same stash appy but here it removes from stash list.
+
+(6) git stash drop : will remove changes from stash list.
 
 
