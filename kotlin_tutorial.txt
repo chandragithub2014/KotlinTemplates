@@ -263,3 +263,176 @@ val modifiedStudent = student.copy(age = 10)
 Kotlin Important Points:
 https://www.journaldev.com/20567/kotlin-interview-questions
 
+
+
+Kotlin Print statements:
+println("Hello world")
+
+var name = "Keving"
+println("Name is ${q.name}")
+println("Name is $name")
+
+No need to explicitly specify a class or function as public in Kotlin as public is default in Kotlin.
+
+Kotlin supports higher order functions
+
+Make a variable accept null by declaring as below:
+var answer:String?= null
+Declaring a question mark will allow answer to accept null value.
+
+val q:Question?=Question()
+q?.Answer= "42"
+
+
+
+
+When:
+Kotlin does not come with 'switch' statement instead it uses 'when' statement.
+Example:
+fun printResult(){   
+    when(Answer){  
+         CorrectAnswer -> print("You were correct")
+         else -> print("Try again?")
+        }
+   
+}
+
+
+For Loop:
+Range of values 
+var myValues = 1..10
+for(i in 1..10){ 
+println(i)
+ }
+
+for(i in 1..10 step 2){ 
+print(i)
+}
+
+
+for(i in 10 downTo 1 step 2){
+print(i)
+}
+
+for(i in 1 until 10){
+print(i)    ///will print 1 to 9
+}
+
+
+
+
+Declaring List in Kotlin
+var numbers = listOf(1,2,3,4,5)
+for(i in numbers){
+print(i) }
+
+
+
+Iterating over map in Kotlin through "for" loop
+var ages = TreeeMap<String,Int>()
+ages["Kevin"] = 55
+ages["peer"] = 54
+
+for((name,age) in ages){
+    print("$name is $age)
+
+}
+
+
+
+
+Funtions:
+
+Function Expressions
+fun max(a:Int,b:Int):Int = if(a > b) a else b
+
+
+Named Paramters functions
+
+fun connect(a:Int,b:Int){ }
+
+fun(a=2,b=3)  or fun(b=10 ,a=1)
+
+
+
+Extension Functions:
+Can 'add' funtions to classes not owned by you.
+
+Infix funtions:
+Member or extension functions
+Have a single parameter
+Marked with infix keyword.
+
+infix fun Header.plus(Header other):Header {...}
+
+
+Example:
+class Header(var name:String) {}
+infix fun Header.plus(other:Header):Header{ 
+  return Header(this.name + other.name)
+
+}
+
+fun main(){
+val h1 = Header("h1")
+val h2 = Header("h2")
+val h3 = h1 plus h2
+println(h3.name)
+}
+
+
+Operator overloading:
+
+class Header(var name:String) {}
+operator infix fun Header.plus(other:Header):Header{ 
+  return Header(this.name + other.name)
+
+}
+fun main(){
+val h1 = Header("h1")
+val h2 = Header("h2")
+val h3 = h1 plus h2
+println(h3.name)
+val h4 = h2 + h1
+print(h4.name)
+}
+
+
+
+Tail Recursive Funtions:
+
+Functions calling itself.
+use tailrec keyword. Prevents from stack overflow.
+Have correct 'form'
+
+Example:
+tailrec fun fib(n:Int,a:BigInteger,b:BigInteger): BigInteger{
+
+return if(n==0) b else fib(n-1,a+b,a)
+}
+
+
+Classes:
+
+Classes in Kotlin are by defualt public and final. Hence cannot be derived from
+
+* use open to show class can be derived from
+* use open to show function can be derived from.
+
+
+Example:
+open class Student : Person() {
+
+   open fun getClasses(){}
+}
+
+
+
+Sealed Classes:
+Used to restrict class Hierarchies.
+'Enums on steroids'
+
+
+SingleTon:
+To create a singleton class we use 'object' keyword
+use 'companion object' to add static methods to the class.
