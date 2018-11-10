@@ -29,7 +29,8 @@ class TemplateViewModel : AndroidViewModel {
                 TemplateModel("WebService DB List"),
                 TemplateModel("Tab"),
                 TemplateModel("RoomDBForm"),
-                TemplateModel("DiffUtilListFireBase")
+                TemplateModel("DiffUtilListFireBase"),
+                TemplateModel("DaggerRetroFITList")
 
                 //TemplateModel("RoomDBList"),
         )
