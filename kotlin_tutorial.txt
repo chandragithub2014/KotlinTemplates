@@ -436,3 +436,122 @@ Used to restrict class Hierarchies.
 SingleTon:
 To create a singleton class we use 'object' keyword
 use 'companion object' to add static methods to the class.
+
+
+High Level Functions:
+
+Strategy PAttern   - 1
+Creating a annonymous classses in Kotlin is done using "object"
+Suppose we have an interface:
+interface process{
+     fun execute(value:Int)   
+}
+
+class Program{
+ fun someProcess(limit:Int,action:process){ }
+}
+
+//calling
+var program = Program()
+program.someProcess ((8,obect:Process{
+    over fun execute(value:Int){
+
+      prntln(val)
+}
+})
+
+
+
+
+
+
+
+Strategy PAttern   - 2
+var program = Program()
+program.someProcess(8, {n->print(n)})
+
+interface process{ 
+   fun execute(value:Int)
+}
+
+
+class Program  {
+    fun calc(limit:Int,action:(Int)-> Unit){
+
+}
+
+}
+
+
+
+Strategy-3
+When the function takes only single parameter
+calculateResult(1,2,{print(it)})
+
+
+
+With and apply:
+Used to make certain operations more naturally.
+
+With Example:
+
+class Meeting {
+  var Title:String  = ""
+  var who = mutableListOf<String>()
+
+fun create(){}
+}
+
+
+fun main(args:Array<String>){
+val m = Meeting()
+with(m){
+Title = "Meeting"
+who.add("evina")
+
+
+} 
+
+
+//Apply 
+m.apply{
+  Title = "Meeting"
+who.add("evina")
+}.create()
+
+}
+
+
+
+
+Filtering and Sorting in Kotlin:
+val ints = listOf(1,2,3,4,5,6)
+val smallInts = ints.filter{it < 4}
+for(i:Int in smallInts) print(i)
+
+val squaredInts = ints.map{it*it}
+for(i:Int in smallInts) print(i)
+
+
+val meetings = ListOf(Meeting(1,"First"),Meeting(2,"CSecond"))
+val title:List<String>=
+ meetings.filter{it->it.title.startsWith("C")}
+         .map{m->m.title}
+
+for(i in title)
+   print(i)
+
+
+Predicates
+val ints  = listOf(1,2,3,4,5)
+val bigInts = ints.all{it>3}
+//Predicate all returns boolean that specifies whether all elements in list are greater than 3
+print(bigInts) //Returns false.
+bigInts  = ints.any{it>3}
+print(bigInts) // Returns true
+
+
+
+
+
+ 
