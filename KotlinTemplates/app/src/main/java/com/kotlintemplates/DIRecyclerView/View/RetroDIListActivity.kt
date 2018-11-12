@@ -34,18 +34,8 @@ class RetroDIListActivity : AppCompatActivity() {
         retroDIViewModel = ViewModelProviders.of(this).get(RetroDIViewModel::class.java)
         initViews()
         setAdapter()
-        (application as RetroDIApplication).retroComponent.inject(this@RetroDIListActivity)
-        /*  val mService = retrofit!!.create(APIService::class.java)
-        val mInfo = mService.makeRequest()
-         mInfo.enqueue(object : Callback<String> {
-             override fun onResponse(call: Call<String>, response: Response<String>) {
-                 Log.d("DIActivity", "Response::::" + response.body())
-             }
+      //  (application as RetroDIApplication).retroComponent.inject(this@RetroDIListActivity)
 
-             override fun onFailure(call: Call<String>, t: Throwable) {
-                 Log.d("DIActivity", "Error Response::::" + t.toString())
-             }
-         })*/
 
         retroDIViewModel.fetchPostsFromWebSevice(retrofit).observe(this,object : Observer<List<ResultModel>> {
 

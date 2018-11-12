@@ -34,7 +34,8 @@
         <activity android:name=".RoomDBList.View.RoomDBListActivity" />
         <activity android:name=".DIRetroitList.View.RetroFitActivity" />
         <activity android:name=".DInjection.View.View.DIActivity" />
-        <activity android:name=".DIRecyclerView.View.RetroDIListActivity"></activity>
+        <activity android:name=".DIRecyclerView.View.RetroDIListActivity" />
+        <activity android:name=".RegistrationForm.View.RegistrationActivity"></activity>
     </application>
 
 </manifest>

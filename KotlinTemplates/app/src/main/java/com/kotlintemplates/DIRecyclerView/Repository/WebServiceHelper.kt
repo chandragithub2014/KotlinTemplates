@@ -2,7 +2,9 @@ package com.kotlintemplates.DIRecyclerView.Repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.content.Context
 import android.util.Log
+import com.kotlintemplates.DIRecyclerView.RetroDIApplication
 import com.kotlintemplates.RoomRetrofitList.Repository.APIService
 import com.kotlintemplates.RoomRetrofitList.Repository.ResultModel
 import org.json.JSONArray
@@ -13,6 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import java.util.ArrayList
+import javax.inject.Inject
 
 class WebServiceHelper {
 
@@ -39,6 +42,7 @@ class WebServiceHelper {
         }
         return data
     }
+
 
     private fun parseJson(response: String?): List<ResultModel> {
 

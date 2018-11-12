@@ -28,6 +28,7 @@ import com.kotlintemplates.Login.view.LoginActivity
 
 
 import com.kotlintemplates.R
+import com.kotlintemplates.RegistrationForm.View.RegistrationActivity
 import com.kotlintemplates.RoomDBList.View.NewEmployeeActivity
 import com.kotlintemplates.RoomDBList.View.RoomDBListActivity
 import com.kotlintemplates.RoomRetrofitList.View.RetroRoomActivity
@@ -136,6 +137,9 @@ class TemplateListFragment : Fragment(),ClickListener {
             var daggerIntent : Intent = Intent(activity, RetroDIListActivity::class.java)
             startActivity(daggerIntent)
 
+        }else if(position == 9){
+            var registrationIntent:Intent  = Intent(activity,RegistrationActivity::class.java)
+            startActivity(registrationIntent)
         }
     }
 
