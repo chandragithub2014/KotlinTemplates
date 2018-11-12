@@ -71,7 +71,7 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.19'
     kapt 'com.google.dagger:dagger-compiler:2.19'
     //moxy
-   /* compile 'com.arello-mobile:moxy-app-compat:1.1.1'
+    /* compile 'com.arello-mobile:moxy-app-compat:1.1.1'
     kapt 'com.arello-mobile:moxy-compiler:1.1.1'
     implementation 'com.google.dagger:dagger-android-support:2.19'
     implementation 'com.google.dagger:dagger-android-support-jarimpl:2.19'*/
