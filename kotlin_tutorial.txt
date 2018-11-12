@@ -551,6 +551,74 @@ bigInts  = ints.any{it>3}
 print(bigInts) // Returns true
 
 
+Kotlin Nullability Constraints:
+Safe call (?.)
+Checks for null
+call functionality only if non-null reference
+
+
+safe cast(as?)
+Casts to type or returns null
+
+Not-Null Assertions(!!)
+Asserts that something is not null
+
+'let ' function:
+useful when passing Nullable values to functions expecting non-null values
+var m:Meeting?=null
+m?.let{closeMeetingNonNull(m)}
+
+fun closeMeetingNonNull(m:Meeting):Boolean? {
+
+   return if(m.canClose) m.close()
+else false
+}
+
+
+
+Kotlin Collections:
+
+*  listOf,setOf,mapOf
+*  arrayListOf,hashSetOf,hashMapOf
+*  mutableListOf,
+
+
+
+class Person(val age:Int){ }
+
+var people:MutableList<Person?>? = null
+people = mutableListOf(Person(23),person(23))
+people.add(null)
+
+for(person:Person in people.filterNotNull()){
+    println(person.age)
+}
+
+
+
+output:
+23
+23
+
+
+
+Higher ORder Funtions:
+Function that takes another fncn as argument
+val action = {println("Hello, world")}
+val calc:(Int,Int->Int) = {x:Int,y:Int->x*y}
+
+fun main(args:Array<String>){
+   doSomeThing(action)
+}
+
+
+fun doSomeThing(func:()->unit){
+
+
+func()
+
+}
+
 
 
 
