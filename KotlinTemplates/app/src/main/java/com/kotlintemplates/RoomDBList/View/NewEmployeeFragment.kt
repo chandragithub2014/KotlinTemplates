@@ -58,7 +58,7 @@ class NewEmployeeFragment : Fragment(),View.OnClickListener {
         initViews(newEmployeeView)
         return newEmployeeView
     }
-   lateinit var employeeName:EditText
+    lateinit var employeeName:EditText
     lateinit var empAge:EditText
     lateinit var empPlace:EditText
     lateinit var saveInfo:Button
