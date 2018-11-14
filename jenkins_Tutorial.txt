@@ -1,0 +1,30 @@
+start Jenkins:
+java -jar jenkins.war
+
+
+Jenkins runs in below port
+localhost:8080
+
+
+Start Jenkins on specific port
+
+java -jar jenkins.war --httpPort=8081
+
+
+When we want to have secure jenkins
+
+java -jar jenkins.war --httpPort=-1 --httpsPort=
+
+
+
+Jenkins Build Process:
+(1) Check in changes
+(2) Get LAtest
+(3) Build Source
+(4) Build Tests
+(5) Run Tests
+(6) Report Results
+
+
+
+https://www.youtube.com/watch?v=h74i7krG33Y
