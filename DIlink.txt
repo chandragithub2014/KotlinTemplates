@@ -1,4 +1,1 @@
 https://inducesmile.com/android/android-dagger-2-dependency-injection-with-retrofit-for-beginners/
-
-
-https://stackoverflow.com/questions/53195678/lateinit-property-dispatchingandroidinjector-has-not-been-initialized

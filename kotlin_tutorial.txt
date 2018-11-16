@@ -605,7 +605,7 @@ output:
 Higher ORder Funtions:
 Function that takes another fncn as argument
 val action = {println("Hello, world")}
-val calc:(Int,Int->Int) = {x:Int,y:Int->x*y}
+val calc:(Int,Int)->Int = {x,y->x*y}
 
 fun main(args:Array<String>){
    doSomeThing(action)
@@ -620,6 +620,25 @@ func()
 }
 
 
+Generic Collections:
+fun main(){ 
+var names:List<String> = listOf("Kevin","Alex")
+val name = names.itemAt(0)
+println(name)
+}
 
-
+fun<T> List<T>.itemAt(ndx:Int):T{
+    return this[ndx]
+}
  
+
+
+
+Automated Testing:
+Android apps with Kotlin
+Tools and Testing.
+
+http://bit.ly/kotlinandroidtoolsandtesting
+
+
+Android Apps with Kotlin: ViewModel and LifeCycle
