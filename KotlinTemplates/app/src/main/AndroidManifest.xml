@@ -35,7 +35,12 @@
         <activity android:name=".DIRetroitList.View.RetroFitActivity" />
         <activity android:name=".DInjection.View.View.DIActivity" />
         <activity android:name=".DIRecyclerView.View.RetroDIListActivity" />
-        <activity android:name=".RegistrationForm.View.RegistrationActivity"></activity>
+        <activity android:name=".RegistrationForm.View.RegistrationActivity" />
+        <activity android:name=".KotlinSlidingMenu.Views.SlidingMenuActivity" />
+        <activity
+            android:name=".SlidingMenuType2.SlidingMenuType2Activity"
+            android:label="@string/title_activity_sliding_menu_type2"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

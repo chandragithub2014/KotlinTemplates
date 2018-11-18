@@ -31,7 +31,10 @@ class TemplateViewModel : AndroidViewModel {
                 TemplateModel("RoomDBForm"),
                 TemplateModel("DiffUtilListFireBase"),
                 TemplateModel("DaggerRetroFITList"),
-                TemplateModel("Registration Form")
+                TemplateModel("Registration Form"),
+                TemplateModel("SlidingMenu")/*,
+                TemplateModel("SlidingMenuType2")*/
+
 
 
                 //TemplateModel("RoomDBList"),

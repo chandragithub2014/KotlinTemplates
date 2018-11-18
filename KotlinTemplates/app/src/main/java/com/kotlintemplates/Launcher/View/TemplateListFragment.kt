@@ -20,6 +20,7 @@ import com.kotlintemplates.DIRecyclerView.View.RetroDIListActivity
 import com.kotlintemplates.DInjection.View.View.DIActivity
 import com.kotlintemplates.DiffUtilList.View.DiffUtilActivity
 import com.kotlintemplates.GridList.View.GridListActivity
+import com.kotlintemplates.KotlinSlidingMenu.Views.SlidingMenuActivity
 import com.kotlintemplates.KotlinTabs.Views.TabActivity
 import com.kotlintemplates.Launcher.Model.TemplateModel
 import com.kotlintemplates.Launcher.ViewModel.TemplateViewModel
@@ -33,6 +34,7 @@ import com.kotlintemplates.RoomDBList.View.NewEmployeeActivity
 import com.kotlintemplates.RoomDBList.View.RoomDBListActivity
 import com.kotlintemplates.RoomRetrofitList.View.RetroRoomActivity
 import com.kotlintemplates.SimpleLazyList.Views.SimplyLazyListActivity
+import com.kotlintemplates.SlidingMenuType2.SlidingMenuType2Activity
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -140,7 +142,13 @@ class TemplateListFragment : Fragment(),ClickListener {
         }else if(position == 9){
             var registrationIntent:Intent  = Intent(activity,RegistrationActivity::class.java)
             startActivity(registrationIntent)
-        }
+        }else if(position==10){
+            val slidingMenuType2Intent:Intent  = Intent(activity,SlidingMenuType2Activity::class.java)
+            startActivity(slidingMenuType2Intent)
+        }/*else if(position==11){
+            val slidingMenuType2Intent:Intent  = Intent(activity,SlidingMenuType2Activity::class.java)
+            startActivity(slidingMenuType2Intent)
+        }*/
     }
 
 
