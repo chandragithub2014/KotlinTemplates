@@ -274,3 +274,25 @@ git checkout feature2
 (6) git stash drop : will remove changes from stash list.
 
 
+Merge Branches:
+git merge feature1
+
+To resolve conflicts on merge:
+git merge feature2
+
+git mergetool
+ 
+git diff --cached //Cached will ask GIT to compare repository to staged area.
+
+
+git commit -m "Merged feature2 into master"
+
+rm filename.orig
+
+
+Delete Remote Branch:
+git push origin :v1.0_fixes
+
+
+//ctsinpunpando1//VSS-MedData 
+
