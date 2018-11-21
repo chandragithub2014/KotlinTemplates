@@ -1,1 +1,2 @@
 "Hello,GIT" 
+Hello fixed in master
