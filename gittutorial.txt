@@ -292,7 +292,8 @@ rm filename.orig
 
 Delete Remote Branch:
 git push origin :v1.0_fixes
+****pushing local bracnh to remote
+git push -u origin feature_1_branch
 
-
-//ctsinpunpando1//VSS-MedData //Meddata Shared folder
+//ctsinpunpando1//VSS-MedData 
 
