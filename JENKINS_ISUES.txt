@@ -1,0 +1,458 @@
+Started by user CHANDRA SAI MOHAN
+Building in workspace C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates
+ > C:\Program Files\Git\bin\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/chandragithub2014/KotlinTemplates.git # timeout=10
+Fetching upstream changes from https://github.com/chandragithub2014/KotlinTemplates.git
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > C:\Program Files\Git\bin\git.exe fetch --tags --progress https://github.com/chandragithub2014/KotlinTemplates.git +refs/heads/*:refs/remotes/origin/*
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 4c3da0f9eba24cb22d0ab79201c7bb1f97632ee3 (refs/remotes/origin/master)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f 4c3da0f9eba24cb22d0ab79201c7bb1f97632ee3
+Commit message: "Updated with ignore constructor for Room"
+ > C:\Program Files\Git\bin\git.exe rev-list --no-walk 6a64a4f4ae5b400322bd8a1f65d1a3747b58903c # timeout=10
+[Gradle] - Launching build.
+[KotlinTemplates] $ cmd.exe /C "C:\Users\CHANDRASAIMOHAN\.jenkins\tools\hudson.plugins.gradle.GradleInstallation\Gradle_5.0\bin\gradle.bat build --stacktrace && exit %%ERRORLEVEL%%"
+Starting a Gradle Daemon, 1 incompatible and 2 stopped Daemons could not be reused, use --status for details
+> Configure project :app
+WARNING: Configuration 'compile' is obsolete and has been replaced with 'implementation' and 'api'.
+It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
+WARNING: Configuration 'testCompile' is obsolete and has been replaced with 'testImplementation' and 'testApi'.
+It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
+WARNING: Configuration 'testApi' is obsolete and has been replaced with 'testImplementation'.
+It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
+WARNING: Configuration 'androidTestCompile' is obsolete and has been replaced with 'androidTestImplementation' and 'androidTestApi'.
+It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
+WARNING: Configuration 'androidTestApi' is obsolete and has been replaced with 'androidTestImplementation'.
+It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
+Could not find google-services.json while looking in [src/nullnull/debug, src/debug/nullnull, src/nullnull, src/debug, src/nullnullDebug]
+registerResGeneratingTask is deprecated, use registerGeneratedResFolders(FileCollection)
+Could not find google-services.json while looking in [src/nullnull/release, src/release/nullnull, src/nullnull, src/release, src/nullnullRelease]
+registerResGeneratingTask is deprecated, use registerGeneratedResFolders(FileCollection)
+app: 'androidProcessor' dependencies won't be recognized as kapt annotation processors. Please change the configuration name to 'kapt' for these artifacts: 'android.arch.lifecycle:compiler:1.1.1', 'com.google.dagger:dagger-android-processor:2.19', 'com.google.dagger:dagger-compiler:2.19', 'com.google.dagger:dagger-compiler:2.2'.
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild
+> Task :app:compileDebugAidl
+> Task :app:compileDebugRenderscript
+> Task :app:checkDebugManifest
+> Task :app:generateDebugBuildConfig
+> Task :app:mainApkListPersistenceDebug
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+
+> Task :app:processDebugGoogleServices
+Parsing json file: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\google-services.json
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:processDebugManifest
+> Task :app:splitsDiscoveryTaskDebug
+> Task :app:processDebugResources
+> Task :app:kaptGenerateStubsDebugKotlin
+Using Kotlin incremental compilation
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\build\tmp\kapt3\stubs\debug\com\kotlintemplates\RoomRetrofitList\Repository\PostInfoRoomDataBase.java:5: warning: Schema export directory is not provided to the annotation processor so we cannot export the schema. You can either provide `room.schemaLocation` annotation processor argument OR set exportSchema to false.
+w: 
+
+w: public abstract class PostInfoRoomDataBase extends android.arch.persistence.room.RoomDatabase {
+w:                 ^
+> Task :app:kaptDebugKotlin
+> Task :app:compileDebugKotlin
+Using Kotlin incremental compilation
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\DI\RetroModule.kt: (28, 25): Parameter 'gson' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\Repository\WebServiceHelper.kt: (51, 13): Variable 'jsonObject' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (15, 57): Unnecessary safe call on a non-null receiver of type ViewGroup
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (19, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (20, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (21, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (9, 25): The corresponding parameter in the supertype 'Any' is named 'other'. This may cause problems when calling this function with named arguments.
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (14, 40): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (15, 37): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (16, 44): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Repository\StudentRepository.kt: (15, 5): Lateinit is unnecessary: definitely initialized in constructors
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (15, 5): Lateinit is unnecessary: definitely initialized in constructors
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (40, 43): Unnecessary non-null assertion (!!) on a non-null receiver of type DataSnapshot
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (41, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (43, 31): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (45, 78): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (46, 50): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (47, 70): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (29, 44): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (41, 104): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (43, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (44, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (49, 33): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (67, 79): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (68, 69): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (69, 67): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\GridList\View\GridLazyListAdapter.kt: (61, 40): Unnecessary non-null assertion (!!) on a non-null receiver of type SimpleLazyModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\GridList\View\GridListFragment.kt: (76, 29): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\GridList\View\GridListFragment.kt: (77, 29): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\KotlinSlidingMenu\Views\SlidingMenuActivity.kt: (79, 22): Unnecessary non-null assertion (!!) on a non-null receiver of type DrawerLayout
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\KotlinSlidingMenu\Views\SlidingMenuActivity.kt: (83, 22): Unnecessary non-null assertion (!!) on a non-null receiver of type DrawerLayout
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RegistrationForm\View\RegistrationFragment.kt: (41, 19): Parameter 'view' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\Repository\EmployeeDBRepository.kt: (40, 16): Condition 'p0[0]!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\Repository\EmployeeDBRepository.kt: (54, 16): Condition 'p0[0]!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\AddNewEmployeeFragment.kt: (71, 65): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\AddNewEmployeeFragment.kt: (72, 69): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\AddNewEmployeeFragment.kt: (79, 14): Condition 'collectInputInfo() != null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\EmpDiffUtilCallBack.kt: (16, 34): Unnecessary non-null assertion (!!) on a non-null receiver of type String
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\NewEmployeeFragment.kt: (71, 65): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\NewEmployeeFragment.kt: (72, 69): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\NewEmployeeFragment.kt: (79, 14): Condition 'collectInputInfo() != null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (32, 44): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (44, 92): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (46, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (47, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (52, 33): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (70, 62): Unnecessary non-null assertion (!!) on a non-null receiver of type EmployeeEntity
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (71, 63): Unnecessary non-null assertion (!!) on a non-null receiver of type EmployeeEntity
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (73, 63): Unnecessary non-null assertion (!!) on a non-null receiver of type EmployeeEntity
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\Repository\APIServiceFactory.kt: (32, 13): Variable 'response' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\Repository\APIServiceFactory.kt: (67, 13): Variable 'jsonObject' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\Repository\PostInfoDBRepository.kt: (32, 16): Condition 'p0[0]!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (15, 57): Unnecessary safe call on a non-null receiver of type ViewGroup
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (19, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (20, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (21, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (3, 20): 'ProgressDialog' is deprecated. Deprecated in Java
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (30, 30): 'ProgressDialog' is deprecated. Deprecated in Java
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (34, 26): 'ProgressDialog' is deprecated. Deprecated in Java
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (78, 12): Condition 'progressDialog!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\SimpleLazyList\Views\SimpleLazyListAdapter.kt: (61, 40): Unnecessary non-null assertion (!!) on a non-null receiver of type SimpleLazyModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\SimpleLazyList\Views\SimpleLazyListFragment.kt: (78, 25): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\SimpleLazyList\Views\SimpleLazyListFragment.kt: (79, 25): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+> Task :app:prepareLintJar
+> Task :app:generateDebugSources
+> Task :app:javaPreCompileDebug
+> Task :app:compileDebugJavaWithJavac
+> Task :app:compileDebugNdk NO-SOURCE
+> Task :app:compileDebugSources
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders
+> Task :app:generateDebugAssets
+> Task :app:mergeDebugAssets
+> Task :app:transformClassesWithDexBuilderForDebug
+> Task :app:transformDexArchiveWithExternalLibsDexMergerForDebug
+> Task :app:transformDexArchiveWithDexMergerForDebug
+> Task :app:mergeDebugJniLibFolders
+> Task :app:transformNativeLibsWithMergeJniLibsForDebug
+> Task :app:transformNativeLibsWithStripDebugSymbolForDebug
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:transformResourcesWithMergeJavaResForDebug
+> Task :app:validateSigningDebug
+> Task :app:packageDebug
+> Task :app:assembleDebug
+> Task :app:preReleaseBuild
+> Task :app:compileReleaseAidl
+> Task :app:compileReleaseRenderscript
+> Task :app:checkReleaseManifest
+> Task :app:generateReleaseBuildConfig
+> Task :app:mainApkListPersistenceRelease
+> Task :app:generateReleaseResValues
+> Task :app:generateReleaseResources
+
+> Task :app:processReleaseGoogleServices
+Parsing json file: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\google-services.json
+> Task :app:mergeReleaseResources
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:processReleaseManifest
+> Task :app:splitsDiscoveryTaskRelease
+> Task :app:processReleaseResources
+> Task :app:kaptGenerateStubsReleaseKotlin
+Using Kotlin incremental compilation
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\build\tmp\kapt3\stubs\release\com\kotlintemplates\RoomRetrofitList\Repository\PostInfoRoomDataBase.java:5: warning: Schema export directory is not provided to the annotation processor so we cannot export the schema. You can either provide `room.schemaLocation` annotation processor argument OR set exportSchema to false.
+w: 
+
+w: public abstract class PostInfoRoomDataBase extends android.arch.persistence.room.RoomDatabase {
+w:                 ^
+> Task :app:kaptReleaseKotlin
+> Task :app:compileReleaseKotlin
+Using Kotlin incremental compilation
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\DI\RetroModule.kt: (28, 25): Parameter 'gson' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\Repository\WebServiceHelper.kt: (51, 13): Variable 'jsonObject' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (15, 57): Unnecessary safe call on a non-null receiver of type ViewGroup
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (19, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (20, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DIRecyclerView\View\PostsAdapter.kt: (21, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (9, 25): The corresponding parameter in the supertype 'Any' is named 'other'. This may cause problems when calling this function with named arguments.
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (14, 40): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (15, 37): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Model\DiffUtilModel.kt: (16, 44): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\Repository\StudentRepository.kt: (15, 5): Lateinit is unnecessary: definitely initialized in constructors
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (15, 5): Lateinit is unnecessary: definitely initialized in constructors
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (40, 43): Unnecessary non-null assertion (!!) on a non-null receiver of type DataSnapshot
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (41, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (43, 31): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (45, 78): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (46, 50): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\ViewModel\DiffUtilViewModel.kt: (47, 70): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (29, 44): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (41, 104): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (43, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (44, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (49, 33): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<DiffUtilModel>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (67, 79): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (68, 69): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\DiffUtilList\View\DiffUtilAdapter.kt: (69, 67): Unnecessary non-null assertion (!!) on a non-null receiver of type DiffUtilModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\GridList\View\GridLazyListAdapter.kt: (61, 40): Unnecessary non-null assertion (!!) on a non-null receiver of type SimpleLazyModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\GridList\View\GridListFragment.kt: (76, 29): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\GridList\View\GridListFragment.kt: (77, 29): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\KotlinSlidingMenu\Views\SlidingMenuActivity.kt: (79, 22): Unnecessary non-null assertion (!!) on a non-null receiver of type DrawerLayout
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\KotlinSlidingMenu\Views\SlidingMenuActivity.kt: (83, 22): Unnecessary non-null assertion (!!) on a non-null receiver of type DrawerLayout
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RegistrationForm\View\RegistrationFragment.kt: (41, 19): Parameter 'view' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\Repository\EmployeeDBRepository.kt: (40, 16): Condition 'p0[0]!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\Repository\EmployeeDBRepository.kt: (54, 16): Condition 'p0[0]!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\AddNewEmployeeFragment.kt: (71, 65): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\AddNewEmployeeFragment.kt: (72, 69): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\AddNewEmployeeFragment.kt: (79, 14): Condition 'collectInputInfo() != null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\EmpDiffUtilCallBack.kt: (16, 34): Unnecessary non-null assertion (!!) on a non-null receiver of type String
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\NewEmployeeFragment.kt: (71, 65): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\NewEmployeeFragment.kt: (72, 69): This cast can never succeed
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\NewEmployeeFragment.kt: (79, 14): Condition 'collectInputInfo() != null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (32, 44): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (44, 92): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (46, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (47, 32): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (52, 33): Unnecessary non-null assertion (!!) on a non-null receiver of type MutableList<EmployeeEntity>
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (70, 62): Unnecessary non-null assertion (!!) on a non-null receiver of type EmployeeEntity
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (71, 63): Unnecessary non-null assertion (!!) on a non-null receiver of type EmployeeEntity
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomDBList\View\RoomDBAdapter.kt: (73, 63): Unnecessary non-null assertion (!!) on a non-null receiver of type EmployeeEntity
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\Repository\APIServiceFactory.kt: (32, 13): Variable 'response' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\Repository\APIServiceFactory.kt: (67, 13): Variable 'jsonObject' is never used
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\Repository\PostInfoDBRepository.kt: (32, 16): Condition 'p0[0]!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (15, 57): Unnecessary safe call on a non-null receiver of type ViewGroup
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (19, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (20, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\PostsAdapter.kt: (21, 15): Unnecessary non-null assertion (!!) on a non-null receiver of type PostsAdapter.UserPostHolder
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (3, 20): 'ProgressDialog' is deprecated. Deprecated in Java
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (30, 30): 'ProgressDialog' is deprecated. Deprecated in Java
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (34, 26): 'ProgressDialog' is deprecated. Deprecated in Java
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\RoomRetrofitList\View\RetrofitRoomKotlinFragment.kt: (78, 12): Condition 'progressDialog!=null' is always 'true'
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\SimpleLazyList\Views\SimpleLazyListAdapter.kt: (61, 40): Unnecessary non-null assertion (!!) on a non-null receiver of type SimpleLazyModel
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\SimpleLazyList\Views\SimpleLazyListFragment.kt: (78, 25): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+w: C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\src\main\java\com\kotlintemplates\SimpleLazyList\Views\SimpleLazyListFragment.kt: (79, 25): Unnecessary non-null assertion (!!) on a non-null receiver of type RecyclerView
+> Task :app:generateReleaseSources
+> Task :app:javaPreCompileRelease
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:compileReleaseNdk NO-SOURCE
+> Task :app:compileReleaseSources
+> Task :app:lintVitalRelease SKIPPED
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders
+> Task :app:generateReleaseAssets
+> Task :app:mergeReleaseAssets
+> Task :app:transformClassesWithDexBuilderForRelease
+> Task :app:transformDexArchiveWithExternalLibsDexMergerForRelease
+> Task :app:transformDexArchiveWithDexMergerForRelease
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:transformNativeLibsWithMergeJniLibsForRelease
+> Task :app:transformNativeLibsWithStripDebugSymbolForRelease
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:transformResourcesWithMergeJavaResForRelease
+> Task :app:packageRelease
+> Task :app:assembleRelease
+> Task :app:assemble
+> Task :app:lint
+Ran lint on variant release: 168 issues found
+Ran lint on variant debug: 168 issues found
+Wrote HTML report to file:///C:/Users/CHANDRASAIMOHAN/.jenkins/workspace/KotlinTemplates/KotlinTemplates/app/build/reports/lint-results.html
+Wrote XML report to file:///C:/Users/CHANDRASAIMOHAN/.jenkins/workspace/KotlinTemplates/KotlinTemplates/app/build/reports/lint-results.xml
+
+> Task :app:lint FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lint'.
+> Lint found errors in the project; aborting build.
+  
+  Fix the issues identified by lint, or add the following to your build script to proceed with errors:
+  ...
+  android {
+      lintOptions {
+          abortOnError false
+      }
+  }
+  ...
+  
+  Errors found:
+  
+  C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\build.gradle: Error: All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). Found versions 28.0.0, 27.1.0. Examples include com.android.support:animated-vector-drawable:28.0.0 and com.android.support:exifinterface:27.1.0 [GradleCompatible]
+  
+
+
+* Try:
+Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:lint'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:96)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:65)
+	at org.gradle.api.internal.tasks.execution.ActionEventFiringTaskExecuter.execute(ActionEventFiringTaskExecuter.java:44)
+	at org.gradle.api.internal.tasks.execution.TimeoutTaskExecuter.execute(TimeoutTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.SnapshotAfterExecutionTaskExecuter.execute(SnapshotAfterExecutionTaskExecuter.java:38)
+	at org.gradle.api.internal.tasks.execution.OutputDirectoryCreatingTaskExecuter.execute(OutputDirectoryCreatingTaskExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:59)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute(ResolveTaskOutputCachingStateExecuter.java:49)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:61)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:101)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:91)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:44)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute(ResolveTaskArtifactStateTaskExecuter.java:62)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:54)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:35)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.run(EventFiringTaskExecuter.java:49)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:301)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:293)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:175)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.run(DelegatingBuildOperationExecutor.java:31)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:44)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:43)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:337)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:325)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:304)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker$1.execute(DefaultPlanExecutor.java:134)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker$1.execute(DefaultPlanExecutor.java:129)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:202)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.executeNextNode(DefaultPlanExecutor.java:193)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:129)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:74)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:167)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:150)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:41)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:40)
+	at org.gradle.execution.DefaultBuildExecuter.access$000(DefaultBuildExecuter.java:24)
+	at org.gradle.execution.DefaultBuildExecuter$1.proceed(DefaultBuildExecuter.java:46)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:49)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:40)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:33)
+	at org.gradle.initialization.DefaultGradleLauncher$ExecuteTasks.run(DefaultGradleLauncher.java:367)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:301)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:293)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:175)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.run(DelegatingBuildOperationExecutor.java:31)
+	at org.gradle.initialization.DefaultGradleLauncher.runTasks(DefaultGradleLauncher.java:231)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:158)
+	at org.gradle.initialization.DefaultGradleLauncher.executeTasks(DefaultGradleLauncher.java:133)
+	at org.gradle.internal.invocation.GradleBuildController$1.execute(GradleBuildController.java:79)
+	at org.gradle.internal.invocation.GradleBuildController$1.execute(GradleBuildController.java:76)
+	at org.gradle.internal.invocation.GradleBuildController$3.create(GradleBuildController.java:103)
+	at org.gradle.internal.invocation.GradleBuildController$3.create(GradleBuildController.java:96)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:183)
+	at org.gradle.internal.work.StopShieldingWorkerLeaseService.withLocks(StopShieldingWorkerLeaseService.java:40)
+	at org.gradle.internal.invocation.GradleBuildController.doBuild(GradleBuildController.java:96)
+	at org.gradle.internal.invocation.GradleBuildController.run(GradleBuildController.java:76)
+	at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:28)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.tooling.internal.provider.ValidatingBuildActionRunner.run(ValidatingBuildActionRunner.java:32)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner$3.run(RunAsBuildOperationBuildActionRunner.java:49)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:301)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:293)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:175)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.run(DelegatingBuildOperationExecutor.java:31)
+	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionRunner.run(RunAsBuildOperationBuildActionRunner.java:44)
+	at org.gradle.tooling.internal.provider.SubscribableBuildActionRunner.run(SubscribableBuildActionRunner.java:51)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$1.transform(InProcessBuildActionExecuter.java:47)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$1.transform(InProcessBuildActionExecuter.java:44)
+	at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:79)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:44)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:30)
+	at org.gradle.launcher.exec.BuildTreeScopeBuildActionExecuter.execute(BuildTreeScopeBuildActionExecuter.java:39)
+	at org.gradle.launcher.exec.BuildTreeScopeBuildActionExecuter.execute(BuildTreeScopeBuildActionExecuter.java:25)
+	at org.gradle.tooling.internal.provider.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:78)
+	at org.gradle.tooling.internal.provider.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:52)
+	at org.gradle.tooling.internal.provider.ServicesSetupBuildActionExecuter.execute(ServicesSetupBuildActionExecuter.java:62)
+	at org.gradle.tooling.internal.provider.ServicesSetupBuildActionExecuter.execute(ServicesSetupBuildActionExecuter.java:34)
+	at org.gradle.tooling.internal.provider.GradleThreadBuildActionExecuter.execute(GradleThreadBuildActionExecuter.java:36)
+	at org.gradle.tooling.internal.provider.GradleThreadBuildActionExecuter.execute(GradleThreadBuildActionExecuter.java:25)
+	at org.gradle.tooling.internal.provider.ParallelismConfigurationBuildActionExecuter.execute(ParallelismConfigurationBuildActionExecuter.java:43)
+	at org.gradle.tooling.internal.provider.ParallelismConfigurationBuildActionExecuter.execute(ParallelismConfigurationBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:59)
+	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
+	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:59)
+	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:44)
+	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:46)
+	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:30)
+	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:67)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:37)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:26)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:34)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:74)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:72)
+	at org.gradle.util.Swapper.swap(Swapper.java:38)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:72)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:55)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:62)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:81)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
+	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:122)
+	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:50)
+	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:295)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+Caused by: org.gradle.api.GradleException: Lint found errors in the project; aborting build.
+
+Fix the issues identified by lint, or add the following to your build script to proceed with errors:
+...
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
+...
+
+Errors found:
+
+C:\Users\CHANDRASAIMOHAN\.jenkins\workspace\KotlinTemplates\KotlinTemplates\app\build.gradle: Error: All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). Found versions 28.0.0, 27.1.0. Examples include com.android.support:animated-vector-drawable:28.0.0 and com.android.support:exifinterface:27.1.0 [GradleCompatible]
+
+
+	at com.android.tools.lint.gradle.LintGradleExecution.abort(LintGradleExecution.java:199)
+	at com.android.tools.lint.gradle.LintGradleExecution.lintAllVariants(LintGradleExecution.java:558)
+	at com.android.tools.lint.gradle.LintGradleExecution.analyze(LintGradleExecution.java:98)
+	at com.android.tools.lint.gradle.api.ReflectiveLintRunner.runLint(ReflectiveLintRunner.kt:38)
+	at com.android.build.gradle.tasks.LintBaseTask.runLint(LintBaseTask.java:87)
+	at com.android.build.gradle.tasks.LintGlobalTask.lint(LintGlobalTask.java:47)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:73)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:48)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:41)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:28)
+	at org.gradle.api.internal.AbstractTask$TaskActionWrapper.execute(AbstractTask.java:704)
+	at org.gradle.api.internal.AbstractTask$TaskActionWrapper.execute(AbstractTask.java:671)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$1.run(ExecuteActionsTaskExecuter.java:117)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:301)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:293)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:175)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.run(DelegatingBuildOperationExecutor.java:31)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:106)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:85)
+	... 118 more
+
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 6.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/5.0-rc-3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 10m 35s
+61 actionable tasks: 61 executed
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Finished: FAILURE
