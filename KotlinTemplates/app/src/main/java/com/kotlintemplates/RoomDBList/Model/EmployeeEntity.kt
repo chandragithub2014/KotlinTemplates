@@ -14,5 +14,5 @@ data class EmployeeEntity(
   )
 {
 
-    constructor():this(null,"",0,"")
+    @Ignore   constructor():this(null,"",0,"")
 }
