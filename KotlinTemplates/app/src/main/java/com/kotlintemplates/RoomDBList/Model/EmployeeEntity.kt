@@ -2,6 +2,7 @@ package com.kotlintemplates.RoomDBList.Model
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "EmpDetails")
@@ -14,5 +15,5 @@ data class EmployeeEntity(
   )
 {
 
-    @Ignore   constructor():this(null,"",0,"")
+    @Ignore constructor():this(null,"",0,"")
 }
