@@ -294,5 +294,5 @@ Delete Remote Branch:
 git push origin :v1.0_fixes
 
 
-//ctsinpunpando1//VSS-MedData 
+//ctsinpunpando1//VSS-MedData //Meddata Shared folder
 
