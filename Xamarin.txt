@@ -1,2 +1,5 @@
 Step1:
 xamarin.com/download
+
+
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/get-started-with-xaml?tabs=windows
