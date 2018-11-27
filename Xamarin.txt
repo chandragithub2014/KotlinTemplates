@@ -7,3 +7,34 @@ https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/get-star
 
 SQLite DB:
 https://medium.com/@patibrijesh/how-to-use-sqlite-in-a-xamarin-forms-app-2c6ec5894510
+
+
+
+
+
+Webservices:
+https://www.youtube.com/watch?v=hzZ6zjB4DoQ
+
+
+
+List:
+https://www.youtube.com/watch?v=92KczLURli0
+
+
+https://www.youtube.com/watch?v=AkmqS5XBX14
+
+
+https://www.youtube.com/watch?v=0AOeUK8o85s
+
+
+https://www.youtube.com/watch?v=mU-yjen_57w
+
+
+https://www.youtube.com/watch?v=Eh3b6Q6dC5o
+
+
+
+Grid:
+
+https://www.youtube.com/watch?v=zQb_wIGigf0
+https://www.youtube.com/watch?v=FaUfD2qeGUg&pbjreload=10
