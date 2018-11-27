@@ -3,3 +3,7 @@ xamarin.com/download
 
 
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/get-started-with-xaml?tabs=windows
+
+
+SQLite DB:
+https://medium.com/@patibrijesh/how-to-use-sqlite-in-a-xamarin-forms-app-2c6ec5894510
