@@ -38,3 +38,17 @@ Grid:
 
 https://www.youtube.com/watch?v=zQb_wIGigf0
 https://www.youtube.com/watch?v=FaUfD2qeGUg&pbjreload=10
+
+
+Xamarin SQLite:
+https://code.tutsplus.com/tutorials/an-introduction-to-xamarinforms-and-sqlite--cms-23020
+
+
+Tabs:
+https://www.youtube.com/watch?v=vaxa65BtHqY
+
+Carousel page:
+https://www.youtube.com/watch?v=aMzACNpAz7I
+
+
+https://www.youtube.com/watch?v=nY3eXlNJDnA&pbjreload=10
