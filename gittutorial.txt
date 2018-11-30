@@ -325,3 +325,7 @@ git merge develop      # to bring changes to local master from your develop bran
 git push origin master # push current HEAD to remote master branch
 
 
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html 
+https://github.com/joshnh/Git-Commands 
+
+
