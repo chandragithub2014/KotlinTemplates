@@ -1,0 +1,6 @@
+Step1:
+https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows
+
+
+Step 2 :
+npm install jest-serializer
