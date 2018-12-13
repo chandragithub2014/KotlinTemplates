@@ -5,7 +5,7 @@
  * @format
  * @flow
  */
-
+'use strict';
 import React  from 'react';
 import {Login} from './myApp/myViews/Login.js';
 

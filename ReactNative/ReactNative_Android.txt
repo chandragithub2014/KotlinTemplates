@@ -1,6 +1,25 @@
 Step1:
 https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows
 
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+react-native run-android
 
 Step 2 :
 npm install jest-serializer
+
+Enable Navigation in React Native:
+
+D:\Kotlin_Templates\MyFirstReact>npm install -g yarn
+
+D:\Kotlin_Templates\MyFirstReact>yarn add react-navigation
+
+
+
+
+Important Links For login:
+https://www.tutorialspoint.com/react_native/react_native_text_input.htm
+
+
+
+https://www.npmjs.com/package/react-native-android-log
