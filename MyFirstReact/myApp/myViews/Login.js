@@ -7,6 +7,7 @@ import { StyleSheet,
                     TouchableHighlight,
                         Alert,
                            AsyncStorage} from 'react-native';
+import PasswordInputText from 'react-native-hide-show-password-input';
 
 export class Login extends React.Component{
 
@@ -22,6 +23,10 @@ export class Login extends React.Component{
     _loginAccount = ()=>{
       if(!this.state.userName){
           Alert.alert('please enter userName');
+      }else if(!this.state.passwrd){
+        Alert.alert('please enter PassWord');
+      }else{
+        Alert.alert("Login success");
       }
    };
 
@@ -41,17 +46,16 @@ export class Login extends React.Component{
              <View style={styles.container}>
                  <Text style={styles.titleText}>Login</Text>
                  <Text style={styles.basicText}>Enter UserName</Text>
-                 <TextInput placeholder="Enter UserName" 
+                 <TextInput 
                             style={styles.inputText}
                              onChangeText={(text) => this.setState({userName: text})}
                              value={this.state.userName}></TextInput>
                  <Text style={styles.basicText}>Enter PassWord</Text>
-                 <TextInput placeholder="Enter PassWord"
-                             secureTextEntry={true}
+                 <PasswordInputText  placeholder = "Enter Password"
                              style={styles.inputText}
+                             onChangeText={(text) => this.setState({passwrd: text})}
                              value={this.state.passwrd}
-                             onChangeText={(text) => this.setState({passwrd: text})}>
-                             ></TextInput>  
+                           ></PasswordInputText>  
                   <TouchableHighlight
                      onPress={this._loginAccount} 
                      underlayColor="white">

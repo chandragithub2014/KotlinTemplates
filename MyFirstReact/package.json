@@ -11,6 +11,7 @@
     "react": "16.6.1",
     "react-native": "0.57.7",
     "react-native-android-log": "^1.1.0",
+    "react-native-hide-show-password-input": "^1.0.7",
     "react-navigation": "^3.0.8"
   },
   "devDependencies": {

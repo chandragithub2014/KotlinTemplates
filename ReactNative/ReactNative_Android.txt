@@ -23,3 +23,10 @@ https://www.tutorialspoint.com/react_native/react_native_text_input.htm
 
 
 https://www.npmjs.com/package/react-native-android-log
+
+
+https://github.com/dwicao/react-native-login-screen/blob/master/src/components/LoginScreen.js
+
+
+Secure PAssword:
+https://www.npmjs.com/package/react-native-hide-show-password-input
