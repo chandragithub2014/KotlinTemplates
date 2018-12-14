@@ -3,6 +3,8 @@ https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-i
 
 react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
 react-native run-android
 
 Step 2 :
@@ -15,6 +17,9 @@ D:\Kotlin_Templates\MyFirstReact>npm install -g yarn
 D:\Kotlin_Templates\MyFirstReact>yarn add react-navigation
 (or)
 npm install --save react-navigation
+
+yarn add react-navigation@^2.13.0    (Specific)
+D:\Kotlin_Templates\ReactScreenNavigation>react-native link
 
 
 
@@ -40,3 +45,7 @@ https://www.youtube.com/watch?v=PWzSX_kji3Q
 
 Issue:
 https://stackoverflow.com/questions/53773966/stack-navigation-undefined-function-issue
+
+
+logs:
+D:\Kotlin_Templates\MyFirstReact>react-native log-android

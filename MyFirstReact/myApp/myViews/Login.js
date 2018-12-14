@@ -28,7 +28,8 @@ export class Login extends React.Component{
         Alert.alert('please enter PassWord');
       }else{
         Alert.alert("Login success");
-        this.props.navigate('InfoListScreen');
+    //    this.props.navigate('InfoListScreen');
+        this.props.navigation.navigate('LoginChild')
       }
    };
 

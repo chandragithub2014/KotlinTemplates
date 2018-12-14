@@ -9,6 +9,11 @@
 'use strict';
 import React  from 'react';
 import ScreenManager from './myApp/ScreenManager';
-export default ScreenManager;
+const AppContainer = createAppContainer(AppNavigator);
+export default class App extends React.Component {
+    render() {
+      return <AppContainer />;
+    }
+  }
 
 

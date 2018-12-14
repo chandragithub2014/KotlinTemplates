@@ -7,12 +7,24 @@ import { StyleSheet,
                     TouchableHighlight,
                         Alert,
                            AsyncStorage} from 'react-native';
- import LoginScreen from './myViews/Login';
- import InfoListScreen from './infoList/InformationList';     
+ import LoginScreen, { Login } from './myViews/Login';
+ import InfoListScreen, { InformationList } from './infoList/InformationList';    
+ import { createStackNavigator, createAppContainer } from "react-navigation"; 
  
- const Screens = StackNavigator({
+ /*const Screens = StackNavigator({
   LoginScreen:{screen:LoginScreen},
   InfoListScreen:{screen:InfoListScreen}
- });
+ });*/
 
- export default Screens;
+ const AppNavigator = createStackNavigator(
+  {
+    Home: Login,
+    LoginChild: InformationList
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
+
+export default createAppContainer(AppNavigator);
+ //export default Screens;

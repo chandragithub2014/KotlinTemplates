@@ -9,13 +9,13 @@ import { StyleSheet,
 
 export class InformationList extends Component{
 
-        constructor(props){
+  /*      constructor(props){
             super(props);
             this.state = {isListLoaded :false,
                         infoList:null };
         }
-
-        componentDidMount(){
+*/
+    /*   componentDidMount(){
             return fetch("https://jsonplaceholder.typicode.com/posts")
             .then((response) => response.json())
             .then((responseJson)=>{
@@ -30,21 +30,31 @@ export class InformationList extends Component{
             });
         }
 
-        render(){
+*/
+  /*      render(){
             if(!this.state.isListLoaded){
                 return(
                    <View style={styles.container}>
                        <ActivityIndicator></ActivityIndicator>
                    </View>
-                )
+                );
             }else{
                 return(
                     <View style={styles.container}>
                     <Text>Content Loaded.....</Text>
                 </View>
 
-                )
+                );
             }
+        }
+*/
+        render(){
+            return(
+                <View style={styles.container}>
+                <Text>Content Loaded.....</Text>
+            </View>
+
+            );
         }
 }
 
