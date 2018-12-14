@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 import React,{Component} from 'react';
+import { StackNavigator } from 'react-navigation';
 import { StyleSheet,
             Text,
               View,
@@ -27,6 +28,7 @@ export class Login extends React.Component{
         Alert.alert('please enter PassWord');
       }else{
         Alert.alert("Login success");
+        this.props.navigate('InfoListScreen');
       }
    };
 
@@ -42,6 +44,7 @@ export class Login extends React.Component{
    }*/
 
     render(){
+        const { navigate }  = this.props.navigation;
         return(
              <View style={styles.container}>
                  <Text style={styles.titleText}>Login</Text>

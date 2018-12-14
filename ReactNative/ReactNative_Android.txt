@@ -13,6 +13,8 @@ Enable Navigation in React Native:
 D:\Kotlin_Templates\MyFirstReact>npm install -g yarn
 
 D:\Kotlin_Templates\MyFirstReact>yarn add react-navigation
+(or)
+npm install --save react-navigation
 
 
 
@@ -30,3 +32,11 @@ https://github.com/dwicao/react-native-login-screen/blob/master/src/components/L
 
 Secure PAssword:
 https://www.npmjs.com/package/react-native-hide-show-password-input
+
+
+Navigation:
+https://www.youtube.com/watch?v=PWzSX_kji3Q
+
+
+Issue:
+https://stackoverflow.com/questions/53773966/stack-navigation-undefined-function-issue
