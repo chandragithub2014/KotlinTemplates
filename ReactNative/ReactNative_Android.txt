@@ -52,9 +52,13 @@ D:\Kotlin_Templates\MyFirstReact>react-native log-android
 
 
 
+flat List:
+https://www.youtube.com/watch?v=kxNLLXkYuAg
 
-Start React Native using Expo:
-$ npm install -g expo-cli
-$ expo init my-app
-$ cd my-app/
-$ npm start
+
+https://stackoverflow.com/questions/53791666/fetch-index-of-clicked-item-in-flatlist-react-native
+
+
+
+PassData:
+https://www.youtube.com/watch?v=lDR0P_5Gs0k

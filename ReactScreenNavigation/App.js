@@ -10,6 +10,7 @@ import React from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import  { Login } from './infoscreens/Login';
 import  { ListInfo } from './infoscreens/ListInfo';
+import {ListDetail} from './infoscreens/ListDetail';
 //import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {StackNavigator} from 'react-navigation';
 
@@ -18,6 +19,7 @@ import {StackNavigator} from 'react-navigation';
 const App = StackNavigator({
 Login: { screen: Login },
 ListInfo: { screen: ListInfo },
+ListDetail: { screen: ListDetail },
 },
 {
 initialRouteName: 'Login'

@@ -1,11 +1,25 @@
 import React from 'react';
-import { StyleSheet,View, Text, Button,AsyncStorage,ActivityIndicator } from 'react-native';
+import { StyleSheet,View, Text, Button,AsyncStorage,Alert,
+  ActivityIndicator,FlatList,TouchableWithoutFeedback ,
+ToastAndroid} from 'react-native';
 
 export class ListInfo extends React.Component {
   static navigationOptions = {
-    header: null
-    };
-
+    title:'ListInfo',
+    headerStyle: {
+      backgroundColor: 'green'
+    },
+    headerTitleStyle: {
+      color: 'white'
+    },
+    headerTintColor: 'white',
+   };
+    
+    /* headerStyle: {
+      backgroundColor: 'green'
+    }, 
+    */
+    
     constructor(props)
     {
       super(props);
@@ -20,13 +34,19 @@ export class ListInfo extends React.Component {
            this.setState({
                isListLoaded:true,
                infoList:responseJson
-           })
+         })
 
       })
       .catch((error)=>{
         console.log(error);
       });
    }
+   actionOnRow(item,index) {
+    console.log('Selected Item :',item);
+    Alert.alert("Clicked Item:::"+index);
+    this.props.navigation.navigate('ListDetail',{selectedItemTitle:item.title});
+   // ToastAndroid.show(""+item.i,ToastAndroid.short);
+ }
 
   render() {
     if(!this.state.isListLoaded){
@@ -39,7 +59,19 @@ export class ListInfo extends React.Component {
       return(
           <View style={styles.container}>
           <Text>Content Loaded.....</Text>
-      </View>
+         <FlatList 
+          data = {this.state.infoList}
+          renderItem = {({item,index})=>
+          <TouchableWithoutFeedback onPress={ () => this.actionOnRow(item,index)}>
+          <View style={styles.listItemStyle}>
+          <Text style={styles.titleText}>{item.title}</Text>
+           <Text style={styles.basicText}>{item.body}</Text>
+           </View> 
+           </TouchableWithoutFeedback>
+          } 
+          keyExtractor={(item,index)=>item.index}
+         />
+        </View>
 
       );
   }
@@ -63,15 +95,18 @@ const styles = StyleSheet.create({
     
   },
   titleText: {
-      fontSize: 30,
+      fontSize: 15,
       fontWeight: 'bold',
       color: '#2196F3',
-      textAlign: 'center'
+      textAlign: 'left',
+      marginLeft:5
+
     },
     basicText: {
-      fontSize: 20,
+      fontSize: 15,
       fontWeight: 'normal',
-      paddingBottom:10
+      paddingBottom:10,
+      marginLeft:5
     },
     inputText:{
       borderBottomColor: '#000000',
@@ -79,6 +114,17 @@ const styles = StyleSheet.create({
       fontSize: 20,
       fontWeight: 'normal',
       marginBottom:5
+    },
+    listItemStyle:{
+      borderColor: '#7a42f4',
+      borderWidth: 1,
+      margin:5
+
+    },
+    headerStyles:{
+        backgroundColor: '#00FF00',
+        color: '#FFFFFF',
+        fontFamily: "Lato-Regular",
     }
 });
 /*

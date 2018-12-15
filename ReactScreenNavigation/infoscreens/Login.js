@@ -7,7 +7,7 @@ import { StyleSheet,
               Alert,
                  AsyncStorage, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import PasswordInputText from 'react-native-hide-show-password-input';
+
 
 export class Login extends React.Component {
     static navigationOptions = {
@@ -30,10 +30,12 @@ export class Login extends React.Component {
           }else if(!this.state.passwrd){
             Alert.alert('please enter PassWord');
           }else{
-            Alert.alert("Login success");
+          //  Alert.alert("Login success");
             this.props.navigation.navigate('ListInfo');
           }
       };
+     
+     
         
   render() {
     return (
@@ -46,6 +48,7 @@ export class Login extends React.Component {
                              value={this.state.userName}></TextInput>
                  <Text style={styles.basicText}>Enter PassWord</Text>
                  <TextInput  placeholder = "Enter Password"
+                             secureTextEntry 
                              style={styles.inputText}
                              onChangeText={(text) => this.setState({passwrd: text})}
                              value={this.state.passwrd}
