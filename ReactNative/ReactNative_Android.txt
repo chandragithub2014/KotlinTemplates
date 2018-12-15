@@ -49,3 +49,12 @@ https://stackoverflow.com/questions/53773966/stack-navigation-undefined-function
 
 logs:
 D:\Kotlin_Templates\MyFirstReact>react-native log-android
+
+
+
+
+Start React Native using Expo:
+$ npm install -g expo-cli
+$ expo init my-app
+$ cd my-app/
+$ npm start
