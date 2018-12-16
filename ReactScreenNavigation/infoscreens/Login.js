@@ -7,6 +7,7 @@ import { StyleSheet,
               Alert,
                  AsyncStorage, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import {NavDrawer} from './NavDrawer';
 
 
 export class Login extends React.Component {
@@ -31,7 +32,9 @@ export class Login extends React.Component {
             Alert.alert('please enter PassWord');
           }else{
           //  Alert.alert("Login success");
-            this.props.navigation.navigate('ListInfo');
+          //  this.props.navigation.navigate('ListInfo');
+          this.props.navigation.navigate('TabScreenMain');
+         //  this.props.navigation.navigate('NavDrawer');
           }
       };
      

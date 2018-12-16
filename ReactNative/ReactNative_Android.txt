@@ -62,3 +62,8 @@ https://stackoverflow.com/questions/53791666/fetch-index-of-clicked-item-in-flat
 
 PassData:
 https://www.youtube.com/watch?v=lDR0P_5Gs0k
+
+
+
+ "react-navigation": "2.13.0"
+https://www.youtube.com/watch?v=7uhJN4kVS6g

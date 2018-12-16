@@ -10,7 +10,8 @@
     "react": "16.6.3",
     "react-native": "0.57.8",
     "react-native-hide-show-password-input": "^1.0.7",
-    "react-navigation": "2.13.0"
+    "react-navigation": "^2.18.3",
+    "react-navigation-drawer": "^1.0.5"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
