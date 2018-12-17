@@ -12,6 +12,7 @@ import  { Login } from './infoscreens/Login';
 import  { ListInfo } from './infoscreens/ListInfo';
 import {ListDetail} from './infoscreens/ListDetail';
 import {Settings} from './infoscreens/Settings';
+import {StartUpList} from './infoscreens/StartUpList';
 import {createMaterialTopTabNavigator} from 'react-navigation';
 
 
@@ -24,6 +25,7 @@ const App = StackNavigator({
 Login: { screen: Login },
 ListInfo: { screen: ListInfo },
 ListDetail: { screen: ListDetail },
+StartUpList:{screen: StartUpList},
 TabScreenMain:{
   screen : createMaterialTopTabNavigator(
   {
