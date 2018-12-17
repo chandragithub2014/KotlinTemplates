@@ -4,6 +4,9 @@ var listData = [
 },
 {
     "name": "Basic Tab"
+},
+{
+    "name": "Advanced List"
 }
 ];
 module.exports = listData;

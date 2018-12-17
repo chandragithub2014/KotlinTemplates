@@ -13,6 +13,7 @@ import  { ListInfo } from './infoscreens/ListInfo';
 import {ListDetail} from './infoscreens/ListDetail';
 import {Settings} from './infoscreens/Settings';
 import {StartUpList} from './infoscreens/StartUpList';
+import {StyledList} from './infoscreens/StyledList';
 import {createMaterialTopTabNavigator} from 'react-navigation';
 
 
@@ -26,6 +27,7 @@ Login: { screen: Login },
 ListInfo: { screen: ListInfo },
 ListDetail: { screen: ListDetail },
 StartUpList:{screen: StartUpList},
+StyledList:{screen: StyledList},
 TabScreenMain:{
   screen : createMaterialTopTabNavigator(
   {

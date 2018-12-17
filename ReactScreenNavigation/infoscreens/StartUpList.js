@@ -2,30 +2,24 @@ import React from 'react';
 import { StyleSheet,View, Text, Button,AsyncStorage,Alert,
   ActivityIndicator,FlatList,TouchableWithoutFeedback ,
 ToastAndroid} from 'react-native';
-import {listData} from '../data/listData';
-
+import listData from '../data/listData';
+/*
 class ListItemInfo extends React.Component{
     render(){
         return(
             <TouchableWithoutFeedback onPress={ () => this.actionOnRow(item,index)}>
             <View style={styles.listItemStyle}>
-            <Text style={styles.titleText}>{this.props.item.name}</Text>
+            <Text style={styles.titleText}>listInfooooo</Text>
           </View> 
              </TouchableWithoutFeedback>
-
         );
     }
 
-    actionOnRow(item,index) {
-        console.log('Selected Item :',item);
-        Alert.alert("Clicked Item:::"+index);
-    //    this.props.navigation.navigate('ListDetail',{selectedItemTitle:item.title});
-       // ToastAndroid.show(""+item.i,ToastAndroid.short);
-     }
-}
+    
+}*/
 export class StartUpList extends React.Component {
     static navigationOptions = {
-        title:'ListInfo',
+        title:'Landing List',
         headerStyle: {
           backgroundColor: 'green'
         },
@@ -34,16 +28,30 @@ export class StartUpList extends React.Component {
         },
         headerTintColor: 'white',
        };
-      
+  
+       actionOnRow(item,index) {
+        console.log('Selected Item :',item);
+        Alert.alert("Clicked Item:::"+index);
+        if(index ==0){
+          this.props.navigation.navigate('ListInfo');
+        }else if(index==1){
+          this.props.navigation.navigate('TabScreenMain');
+        }else if(index==2){
+          this.props.navigation.navigate('StyledList');
+        }
+     }
     render(){
         return(
             <View style={styles.container}>
             <FlatList 
                data = {listData}
-               renderItem = {({item,index})=> {
-                return(<ListItemInfo item = {item} index = {index}></ListItemInfo>);
-              }
-            }
+               renderItem = {({item,index})=>
+               <TouchableWithoutFeedback onPress={ () => this.actionOnRow(item,index)}>
+               <View style={styles.listItemStyle}>
+               <Text style={styles.basicText}>{item.name}</Text>
+               </View> 
+                </TouchableWithoutFeedback>
+               } 
             keyExtractor={(item,index)=>item.index}
               ></FlatList>
             </View>
@@ -55,7 +63,10 @@ export class StartUpList extends React.Component {
 const styles = StyleSheet.create({
     container: {
       paddingTop: '10%',
-      margin:10
+      margin:10,
+      flex:1,
+      alignItems:'center',
+      justifyContent:'center'
       },
     button: {
       marginBottom: 30,
@@ -80,7 +91,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'normal',
         paddingBottom:10,
-        marginLeft:5
+        marginLeft:5,
+        textAlign: 'center',
       },
       inputText:{
         borderBottomColor: '#000000',
@@ -91,6 +103,7 @@ const styles = StyleSheet.create({
       },
       listItemStyle:{
         borderColor: '#7a42f4',
+        flex:1,
         borderWidth: 1,
         margin:5
   

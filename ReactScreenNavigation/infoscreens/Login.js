@@ -34,7 +34,7 @@ export class Login extends React.Component {
           //  Alert.alert("Login success");
           //  this.props.navigation.navigate('ListInfo');
        //   this.props.navigation.navigate('TabScreenMain');
-          this.props.navigation.navigate('StartUpList');
+        this.props.navigation.navigate('StartUpList');
          //  this.props.navigation.navigate('NavDrawer');
           }
       };
