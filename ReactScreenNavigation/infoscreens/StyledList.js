@@ -60,7 +60,6 @@ export class StyledList extends React.Component {
             <List>
             <FlatList 
             data = {this.state.infoList}
-            keyExtractor={(item,index)=>item.index}
             renderItem = {({item,index})=>
             <ListItem onPress={ () => this.actionOnRow(item,index)}>
             roundAvatar
@@ -69,6 +68,7 @@ export class StyledList extends React.Component {
             subtitle={item.population}
             </ListItem>
             }
+             keyExtractor={(item,index)=>item.index}
             >
            </FlatList>
             </List>

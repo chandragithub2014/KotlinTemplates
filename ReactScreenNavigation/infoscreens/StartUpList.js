@@ -63,11 +63,8 @@ export class StartUpList extends React.Component {
 const styles = StyleSheet.create({
     container: {
       paddingTop: '10%',
-      margin:10,
-      flex:1,
-      alignItems:'center',
-      justifyContent:'center'
-      },
+      margin:10
+          },
     button: {
       marginBottom: 30,
       alignItems: 'center',
