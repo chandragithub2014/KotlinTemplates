@@ -31,7 +31,7 @@ export class StartUpList extends React.Component {
   
        actionOnRow(item,index) {
         console.log('Selected Item :',item);
-        Alert.alert("Clicked Item:::"+index);
+       // Alert.alert("Clicked Item:::"+index);
         if(index ==0){
           this.props.navigation.navigate('ListInfo');
         }else if(index==1){
@@ -63,7 +63,8 @@ export class StartUpList extends React.Component {
 const styles = StyleSheet.create({
     container: {
       paddingTop: '10%',
-      margin:10
+      margin:10,
+      flex:1
           },
     button: {
       marginBottom: 30,

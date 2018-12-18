@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet,View, Text, Button,AsyncStorage,Alert,
-  ActivityIndicator,FlatList,TouchableWithoutFeedback ,
+  ActivityIndicator,FlatList,Image,TouchableWithoutFeedback ,
 ToastAndroid} from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 export class StyledList extends React.Component {
@@ -46,6 +46,25 @@ export class StyledList extends React.Component {
        // ToastAndroid.show(""+item.i,ToastAndroid.short);
      }
   
+     renderItem = ({item,index})=>{
+        <TouchableWithoutFeedback onPress={ () => this.actionOnRow(item,index)}>
+      <View style = {styles.listItemStyle}>
+          <Image style={styles.listItemImageStyle}
+                 source={{uri:item.flag}}>
+           </Image>
+           <View style = {styles.listItemSubViewStyle}>
+             <Text style={styles.listItemLabelStyle}>{item.country}</Text>
+             <Text style={styles.listItemSubTitleStyle}>{item.population}</Text>
+           </View>
+      </View>
+      </TouchableWithoutFeedback>
+     }
+
+     renderSeperator = ()=>{
+        return(
+        <View style={styles.listItemSepatorStyle}></View>
+        );
+     }
 
      render(){
         if(!this.state.isListLoaded){
@@ -56,33 +75,75 @@ export class StyledList extends React.Component {
             );
         }else{
             return(
-            <View style={styles.container}>
-            <List>
-            <FlatList 
-            data = {this.state.infoList}
-            renderItem = {({item,index})=>
-            <ListItem onPress={ () => this.actionOnRow(item,index)}>
-            roundAvatar
-            avatar={{uri:item.flag}}
-            title={item.country}
-            subtitle={item.population}
-            </ListItem>
-            }
+             <View>
+             <FlatList 
+             data = {this.state.infoList}
+             renderItem = {({item,index})=>
+             <TouchableWithoutFeedback onPress={ () => this.actionOnRow(item,index)}>
+             <View style = {styles.listItemStyle}>
+             <Image style={styles.listItemImageStyle}
+                    source={{uri:item.flag}}>
+              </Image>
+              <View style = {styles.listItemSubViewStyle}>
+                <Text style={styles.listItemLabelStyle}>{item.country}</Text>
+                <Text style={styles.listItemSubTitleStyle}>{item.population}</Text>
+              </View>
+         </View>
+         </TouchableWithoutFeedback>
+             } 
              keyExtractor={(item,index)=>item.index}
-            >
-           </FlatList>
-            </List>
-            </View>
+             ItemSeparatorComponent={this.renderSeperator}
+             />
+             </View>
 
             );
         }
      };
 }
 
-
+/*
+<View style={styles.container}>
+             <FlatList>
+             data = {this.state.infoList}
+             renderItem={this.renderItem}
+             keyExtractor={(item,index)=>item.index}
+             ItemSeparatorComponent={this.renderSeperator}
+             </FlatList>
+             </View>
+*/ 
 const styles = StyleSheet.create({
     container: {
       felx:1,
       margin:10
+      },
+      listItemStyle:{
+          flex:1,
+          flexDirection:'row',
+          marginBottom:3
+      },
+      listItemImageStyle:{
+          width:80,
+          height:80,
+          margin:5
+      },
+      listItemSubViewStyle:{
+          flex:1,
+          justifyContent:'center',
+          marginLeft:5
+      },
+      listItemLabelStyle:{
+         fontSize:18,
+         color:'green',
+         marginBottom:15
+      },
+      listItemSubTitleStyle:{
+           color:'red',
+           fontSize:16
+      },
+      listItemSepatorStyle:{
+          width:'100%',
+          height:1,
+          backgroundColor:'black'
       }
+
   });
