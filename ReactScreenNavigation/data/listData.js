@@ -7,6 +7,9 @@ var listData = [
 },
 {
     "name": "Advanced List"
+},
+{
+    "name": "DBList"
 }
 ];
 module.exports = listData;

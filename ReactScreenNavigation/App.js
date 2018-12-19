@@ -28,6 +28,7 @@ ListInfo: { screen: ListInfo },
 ListDetail: { screen: ListDetail },
 StartUpList:{screen: StartUpList},
 StyledList:{screen: StyledList},
+DBList:{screen:DBList},
 TabScreenMain:{
   screen : createMaterialTopTabNavigator(
   {

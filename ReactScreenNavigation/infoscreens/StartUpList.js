@@ -38,6 +38,8 @@ export class StartUpList extends React.Component {
           this.props.navigation.navigate('TabScreenMain');
         }else if(index==2){
           this.props.navigation.navigate('StyledList');
+        }else if(index==3){
+          this.props.navigation.navigate('DBList');
         }
      }
     render(){
