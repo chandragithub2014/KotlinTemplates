@@ -78,5 +78,8 @@ Styling List:
 https://react-native-training.github.io/react-native-elements/docs/0.19.1/getting_started.html
 
 
+SQLite React NAtive
+https://aboutreact.com/example-of-sqlite-database-in-react-native/
+
 
 
