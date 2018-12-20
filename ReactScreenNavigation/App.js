@@ -14,6 +14,7 @@ import {ListDetail} from './infoscreens/ListDetail';
 import {Settings} from './infoscreens/Settings';
 import {StartUpList} from './infoscreens/StartUpList';
 import {StyledList} from './infoscreens/StyledList';
+import {DBList} from './infoscreens/DBList';
 import {createMaterialTopTabNavigator} from 'react-navigation';
 
 

@@ -18,14 +18,17 @@ import { Platform,StyleSheet,View, Text, Button,AsyncStorage,Alert,
         db.transaction((tx) => {
           tx.executeSql('SELECT * FROM profile', [], (tx, results) => {
               console.log("Query completed");
+             
     
               // Get rows with Web SQL Database spec compliance.
     
               var len = results.rows.length;
+           //   Alert.alert("Length::::"+len);
               for (let i = 0; i < len; i++) {
                 let row = results.rows.item(i);
-                console.log(`Record: ${row.firstname}`);
-                this.setState({records: row});
+             //   console.log(`Record: ${row.firstname}`);
+               // isListLoaded = true;
+                this.setState({records: row,isListLoaded:true});
               }
             });
         });
