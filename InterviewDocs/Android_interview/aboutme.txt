@@ -1,0 +1,58 @@
+Hi
+Thanks for giving me this opportunity to introduce myself before this panel.
+My name is Chandra Sai Mohan.I'm from Hyderabad.
+
+I have done my graduation in Computer Sciences and Enginering from JNTU Affliated College.
+
+I am a software Engineer  with 11 years of experience in mobile application development.
+
+I started my software career with Gameloft software pvt. ltd as a mobile game developer,developing mobile games for Android and J2ME enabled phones.I worked in Gameloft for 3 years.
+
+
+Currently I am working in Cognizant as  Technical Architect & Team Lead  for the past 8 years developing Native Android Mobile apps for customers as well as MADP platforms.
+
+In Cognizant as part of Mobile Center of Excellence team ,
+I worked on 2 MADP platforms :
+The first one is named as one mobile studio.
+The second one is Mobile app automation platform.
+
+
+I worked on  a Mobile Applcation Development Platform (MADP)  called One Mobile Studio .
+In this platform we developed a methodology  that generates and manages  native mobile apps for both Android and iOS platforms . 
+The app flow to be configured in Android Tablet or iPad ,once configured this platform generates Naitve apps for both platforms. I have led a team of 20 members that developed this platform which won several mobile proejcts .
+I worked on Android version of this MADP platform.This tool is most widely used across different teams in Cognizant in building mobile apps.
+
+
+Mobile App Automation Platform:
+Led a 20 member team to create this automation platform to be used in various client engagements.
+The main objective of this tool is to generate mobile application code from flow chart designed in draw.io
+The generated XML from flow chart created in draw.io serves as input to generate Android and iOS code base.
+This technique reduces 50% of development time.
+
+Mobile ECommerce Platform:
+
+
+Apart from the above MADP platforms I have led the development of mobile apps for health care customers.
+I worked for 3 mobile apps for a Healthcare customer called Meddata. These apps were most widely used by Physicians and patients  across various hospitals in US.
+The usage of these appps resulted in 36% increase of patient reimbursements.
+
+
+
+
+Also worked on mobile app for another Health Care customer Cygna  at onsite a health coaching app named as Coach by Cigna that aims to help users improve their health by making healthier life style decisions. This app is developed in partner ship with Samsung.
+
+I work efficiently both as an individual contributor as well as along with a team.
+
+
+
+
+Also I have experience in developing apps for Android Wearables .
+Had good exposure to latest trends in Android such asInstant Apps, Augmented REality,Instant Apps and onDevice Maching LEarning.
+Also got experience in Kotlin which is Google's official language for Android.
+
+
+
+
+
+
+

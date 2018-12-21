@@ -1,0 +1,177 @@
+GIT:
+Git is distributed version control system
+Distributed means:
+Every one will have their own copy.
+Local Repository is mainatained with every one.
+
+
+
+Git commands:
+(1) git config --global help.autocorrect 1    (where 1 is the milliseconds GIT waits to perform autocorrect)
+              Auto corrects Git command
+(2) git status : Gives status of the repository    (git statse : Also gives status of repository help.autocorrect is set to 1 as above)
+   Example:
+        E:\KotlinTemplateWorks>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+
+(3)To show colors in order to show git info, we use the below command:
+      git config --global color.ui auto
+
+(4) To fetch the config information of the repository:
+    E:\KotlinTemplateWorks>type .git\config
+
+Local Git Repository:
+(5) Suppose we have an empty directory and we have to turn into local git repository:
+Command:
+  E:\GitTutorial>git init
+(6) To add a new file to local repository:
+ E:\GitTutorial>echo "Hello,GIT" > README.txt
+
+(7)E:\GitTutorial>git add README.txt
+
+E:\GitTutorial>git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README.txt
+
+
+(8)To commit the file:
+   git commit
+
+
+(9) To look history of commits
+    git log
+
+(10) To add modified files:
+      git add -u
+(11) To add commit message inline:
+         E:\GitTutorial>git commit -m "Updated README.txt"
+(12) use git diff command : to find difference between 2 commits
+
+      Example:
+         E:\GitTutorial>git diff e00f..6da21
+diff --git a/README.txt b/README.txt
+index 3ebd639..c8d61db 100644
+--- a/README.txt
++++ b/README.txt
+@@ -1,2 +1 @@
+ "Hello,GIT"
+-First update
+ 
+Where:e00f..6da21 are commits numbers
+
+(13) Easier way to use git diff command using Head rather than commit SHAH numbers
+     The latst commit is known as HEAD
+     To go from one commit back to HEAD using tilt commit
+      git diff HEAD~1.. HEAD
+
+
+(14) To add all untracked files:(Suppose u created 2 news files namely file1.txt , file2.txt in ur local repository)
+     E:\GitTutorial>git add -A
+
+(15) To delete a file from directory
+     del 
+      E:\GitTutorial>del file2.txt
+
+(16) E:\GitTutorial>git status     (After removing file)
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+(17) Once deleted we have to add the update to the GIT local repository
+     add -u
+       E:\GitTutorial>git add -u
+
+(18)To rename a file
+      E:\GitTutorial>rename file3.txt  newfile3.txt
+
+
+
+(19) Undoing the changes .
+     suppose u removed some content in your file and saved. U want to again get the previous content .
+     Then use checkout command
+  E:\GitTutorial>git checkout README.txt
+
+
+(20) To reset working copy back to HEAD
+      Suppose u modified some contents in a file and removed another file. U want to get back all the previous content of modified file and recover deleted file
+      use Reset command
+      E:\GitTutorial>git reset --hard
+
+(21)Cleaning the working copy.
+ Suppose u added some unnecessary files say temp1.txt,temp2.txt
+use 
+git clean -n
+
+git clean -f
+
+Example:
+E:\GitTutorial>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        temp1.txt
+        temp2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+E:\GitTutorial>git clean -n
+Would remove temp1.txt
+Would remove temp2.txt
+
+E:\GitTutorial>git clean -f
+Removing temp1.txt
+Removing temp2.txt
+
+E:\GitTutorial>git status
+On branch master
+nothing to commit, working tree clean
+
+       
+
+(22) Ignoring files to be committed to repository. Suppose we have some files that r not necessary to be committed to repository we need to ignore them.
+     Create gitignore text file and write the directories or the files that needs to ignored as below:
+ 
+     E:\GitTutorial>notepad .gitignore
+
+E:\GitTutorial>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        logs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+E:\GitTutorial>notepad .gitignore
+
+E:\GitTutorial>notepad .gitignore
+
+E:\GitTutorial>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+E:\GitTutorial>
+
+

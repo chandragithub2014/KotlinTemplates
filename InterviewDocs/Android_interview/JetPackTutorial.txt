@@ -1,0 +1,60 @@
+Jetpack is a collection of software components  to make it easier to develop great Android apps.
+
+Features:
+These components follow best practices to:
+
+ - Accelearate DEvelopment
+ - Eliminate Boiler plate code
+ - Build high quality apps.
+
+
+Android Architecture Components:
+Are collection of libraries that help you design testable,maintainable,Robust apps.
+
+
+Features:
+These libraries include Lifecycle Aware components help you manage your activity and fragment lifecycles.
+Survive configuration changes,avoid memory leaks and easily load data into your UI.
+
+Use Livedata to build data objects that notiy views when the underling database changes.
+
+Viewmodel stores UI related data that is not destroyed during app rotations
+
+Room is SQLite library that is used to avoid boiler plate code and easily  convert SQLite tables to Java objects.
+
+
+
+LifeCycleAwareComponents:
+LifeCycleAwareComponents are components that are used to manage the lifecycle of componets that is Activity/Fragment.
+Each component whether an activity/Fragment will have lifecycle. 
+Each component that has lifecycle is called LifeCycleOwner.
+Its lifecycle has 2 enumeration Event and state to determine the lifecycle of component.
+Each event is related to a state  for example
+onCreate() event is related to CREATED state
+onStart() event is related to STARTED state and so on.
+There is a LifecycleObserver that performs actions depends on lifecycle state of Lifecycle owner.
+
+
+Create a class that implements LifeCycleObserver
+
+Public class ActivityLifeCycleObserver implements LifeCycleObserver{
+ @OnLifeCycleEvent(LifeCycle.Event.ON_CREATE)
+  public void onCreateEvent(){ }
+
+
+
+}
+
+
+
+public class Activity extends AppCompatActivity{
+
+         onCreate(){
+             getLifeCycle().addObserver(new ActivityLifeCycleObserver())
+          }
+     
+
+}
+
+
+https://www.talentica.com/blogs/android-life-cycle-aware-components/
