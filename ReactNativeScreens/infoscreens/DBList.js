@@ -58,16 +58,9 @@ import { Platform,StyleSheet,View, Text, Button,AsyncStorage,Alert,
       }else{
         return (
           <View style={styles.container}>
-            <FlatList
-              data={this.state.records}
-              renderItem={({ item ,index}) => 
-              <View>
-              <Text>{item.firstname}</Text>
-              <Text>Hello</Text>
-              </View>
-               }
-              keyExtractor={(item,index)=>item.index}
-            />
+          <Text >
+          {this.state.records !== null ? 'Success: ' + this.state.record.firstname : 'Waiting...'}
+        </Text>
           </View>
         );
       }

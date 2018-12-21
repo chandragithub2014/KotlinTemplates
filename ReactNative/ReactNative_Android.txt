@@ -94,3 +94,6 @@ https://gist.githubusercontent.com/peacecwz/6ea0a12c0021fe3d57288e043fcd73da/raw
 
 
 https://github.com/andpor/react-native-sqlite-storage-examples/blob/master/PrepopulatedDatabaseExample/index.android.js
+
+
+https://gist.github.com/juhahinkula/a010afc9d3f663cb1ea4bec818a31135
