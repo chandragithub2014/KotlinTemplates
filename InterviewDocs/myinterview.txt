@@ -175,6 +175,19 @@ Reduce APK Size:
 (4) Use vector drawable so that it reduces lot of size and create resolution independent icons.
 (5) Use appt tool and use png cruncher to true so that it reduces the size of the apk size.
 
+
+  App Security:
+(1) Use Intent chooser to display all possible apps when using Implicit intents so that user can choose the APP through which we share his date.
+(2) Apply signture based permissions:
+    When you want to share data between 2 apps that u own,use signature based permissions,which means both the apps are signed with same signature key it does not require user's permission to share data.
+         <permission android:name="my_custom_permission_name"
+                android:protectionLevel="signature" />
+(3)Use Minimum permissions in our app, and don't use permissions in APP when we can achive the same using intents.
+(4) Https Requests:
+       When communicating with web server , we need to check the webserver contains certificate given by truested CA, then only we can access the webserver.
+(5) Use internal storage to store data that is private to the app , so that it can be deleted when the app is uninstalled and other apps can't access these data as it is private to this app.
+
+
 Localization in Android (Specificall for Arabic) ?
 Best Practices of Coding standards
 Dependency Injection

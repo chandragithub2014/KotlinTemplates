@@ -184,6 +184,14 @@ Reduce APK Size:
 (4) Use vector drawable so that it reduces lot of size and create resolution independent icons.
 (5) Use appt tool and use png cruncher to true so that it reduces the size of the apk size.
 
+Data Security of App:
+(1) From Android 6.0 full disk encryption is enabled by default.So, the data that is stored in shared preferences and Files is default CONTEXT.MODE_PRIVATE.
+   The data can be accessed by only your app.
+(2) Avoid storing data in external storage. Prevent users from installing APP in external storage by setting  android:installLocation= "internalOnly" .
+(3) Prevent app and its data being  backup which can be backed up using adb backup. set android:allowBackup attribute to false by default its set to true.
+https://code.tutsplus.com/tutorials/storing-data-securely-on-android--cms-30558
+
+
 Localization in Android (Specificall for Arabic) ?
 Best Practices of Coding standards
 Dependency Injection
