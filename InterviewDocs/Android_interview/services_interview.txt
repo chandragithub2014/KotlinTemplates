@@ -1,0 +1,305 @@
+What is Service?
+A service is a component that runs in the background to perform long-running operations.
+A service does not provide a use interface.
+Another application component (Activity/BroadcastReceiver/Content Provider) can start a service , and the service continues to run even the component that started is destroyed or user swithches to other application.
+
+Example: A service might play music in background while the user is interacting with other app.
+Service might fetch data over the network without blocking user interaction with activity.
+
+
+How Service is implemented?
+A service is implemented as subclass of Service.
+
+There are 3 different types of services:
+(1) Foreground
+(2) Background
+(3) Bound 
+
+Foreground:
+The foreground service performs some operation that is noticeble to user.
+Ex:Audio track played by music player is noticeble to user as it is displayed as notification.
+Foreground services continue to run even the user is not interacting with app.
+
+Background:
+A Background service performs operation that is not noticeble to user.
+Ex:Fetching a Data from server periodically and updating the local DB.
+
+
+Bound:
+A service is said to be bound when an application component binds to it by calling bindService().
+Bound service provides Client-Server interface that allows components to interact with service,  send requests ,receive results.
+Multiple components can bind to the service at once, when all of them unbind,service is destroyed.
+
+
+Where will Service run ?
+A service runs in your application main thread by default.
+If the service performs any operation that blocks  userinterface consider creating a new thread in the service so that service will not block the user interaction.
+
+What are the callback methods that needs to be overridden in the service implementation?
+
+(1) onCreate()  
+(2) onStartCommand()
+(3) onBind()
+(4) onDestroy()
+
+onCreate()
+The system invokes this method when the service is intially created to perform one time setup procedures.
+Called before onStartCommand() and onBind()
+
+onStartCommand()
+Called when an application component starts a service by calling startService().
+When this method is called the service starts and runs indefinitely in the background indefinitely. Its is your responsibility to stop the service by calling stopService() or stopSelf()
+
+onBind()
+Called when an application component binds to the service by calling bindService(). 
+The bound service provide client server interface, that allows component to interact with the service by sending requests,receive responses.
+Returns iBinder interface which the clients use to interact with the service.
+
+onDestroy()
+Called when the service is no longer used and is destroyed.
+
+
+There are 2 classes you can extend to create a service :
+
+(1) Service class  : This is base class of all services. When you create a service extending Service class , since By default the service runs on Main Thread,we need to create a new Thread to perform operations that blocks or slows down the performs of an activity . This service runs indefinitely till the operation is completed ,its responsibility of the user to stop the service when its work is done by calling stopSelf() or stopService()
+(2) IntentService
+     (1) Creates  a worker Thread that executes all the intents that are delivered to onStartCommand() ,separate from the application's MainThread.
+     (2) Create   a worker Queue that delivers only one intent at a time to onHandleIntent() so that we never have to worry about multithreading.
+     (3) Once all the Intents are handled so that the Service stops itself without explicitly calling stopSelf()
+     (4) Provides default implementation of onBind() and onStartCommand() delivers the intent to worker queue which delivers one intent at a time to onHandleIntent()
+
+
+
+
+
+Example :
+Creating a IntetService.
+
+
+public class MyService extends IntentService {
+
+//Constructor specifies the Thread name
+      public MyService(){
+        super("MyService")
+       }
+
+    protected void onCreate(Bundle onSavedInstance){
+        //Do Initial set up
+
+      }
+
+     public int onStartCommand(Intent intent,int flags,int startId){
+      return super.onStartCommand(intent,flags,startId)
+
+       }
+
+      protected void onHandleIntent(Intent intent) {
+        //Do service long running operation here.
+       }
+}
+
+
+
+
+ExtendingService
+
+     public class MyService extends Service{
+      protected void onCreate(Bunble b){
+      //Initial setup    
+     }
+
+       protected int onStartCommand(Intent intent ,int flags, int startID) {
+
+
+        }
+
+
+       protected void onDestroy(){
+
+     }  
+
+       protected IBinder onBind(Intent intent){
+
+        return null;
+       }
+
+
+      }
+
+
+
+Bound Services:
+There are 2 Types of Bound services:
+(1) Local Binding
+(2) Remote Binding
+
+(1) Local Binding :
+The components which are interested in binding to a service are of same application process ,then its called Local Binding . 
+(2) Remote Binding :
+If the service and the component that want to bind to that service are of different app process/ or different applications then it Remote Binding.
+
+Behaviour of Bound Services:
+(1) Component can bind to started,un-started and stopped service
+(2) Any number of components can bind to the service.
+(3) Bound service is stopped when all the components bound to it are unbound.
+
+Implementation of Local binding and Remote Binding:
+Local Binding is implemented using IBinder interface where as Remote binding is implemented using Messenger and AIDL.
+
+
+
+Local Binding using IBinder:
+
+(1) Service implements IBinder interface and returns IBinder from onBind() method
+(2) Activity uses ServiceConnection API to bind to service.
+
+public class LocalBindService extends Service   {
+     private boolean canFetchInfoFromService;
+     private String serviceInfo  = "";
+class LocalBinder extends Binder {
+    public LocalBindService getService(){ return LocalBindService.this;}
+  } 
+
+private IBinder localBinder = new LocalBinder();
+     protected onCreate(){  }
+     
+     protected int onStartCommand(Intent intent,int flags,int startID) {
+canFetchInfoFromService = true;
+   new Thread(){
+        public void run(){
+          startFetchInfoFromService()
+        }
+        }.start();
+      return START_STICKY; }
+    
+      public IBinder onBind(){
+
+         return localBinder;  }
+
+       public boolean onUnbind(Intent intent) { return super.onUnbind(intent); }
+      private void startFetchInfoFromService(){
+        while(canFetchInfoFromService){
+        try{
+        serviceInfo   = "Hello From Bound Service"
+         }
+         }catch(InterruptedException e){e.printStackTrace();}
+
+        }
+
+     private void stopFetchInfoFromService(){canFetchInfoFromService = false }
+
+       public String fetchServiceInfo(){  return serviceInfo; }
+
+}
+
+
+Activity Implementation
+=====================
+
+public class MyActivity extends AppCompatActivity {
+
+public ServiceConnection serviceConnection;
+LocalBindService myService;
+public bindService(){
+if(serviceConnection == null) {    
+    serviceConnection  = new ServiceConnection(){
+    
+   public void onServiceConnected(ComponentName cnName,IBinder iBinder){
+LocalBindService.LocalBinder localBinder = (LocalBinderService.LocalBinder)iBinder;
+   myService = localBinder.getService();}
+   public void onServiceDisConnected(ComponentName cName){ }     
+
+    
+     }
+  bindService(serviceIntent,serviceConnection,context.BIND_AUTO_CREATE)
+   }
+
+
+}
+
+
+public void unBindService() { unbindService(serviceConnection);}
+
+public String fetchInfoFromBindService(){myService fetchServiceInfo()} 
+
+
+
+}
+
+
+
+
+Remote Binding:
+
+We need to use messenger in component from one app to interact with service of other app.
+Step 0:
+Declare service in Manifest and set attribute android:exported = true so that the service can be exposed to other apps
+Step1:
+Create an Handler in the service
+private final int myConstant = 200
+private class MYHandler extends Handler{ 
+@override
+public void handleMessage(Message msg){
+ switch(msg.what){
+  case myConstant :
+   Message sendMessage = Message.obtain(null,myConstant);
+   sendMessage.arg1 =  getServiceMessage(); //Example: "Hi"
+   
+    msg.replyTo.send(sendMessage)
+    
+   
+     break;
+}
+super.handle(msg);
+}
+} 
+
+Step 2: Create a messager object as below:
+  Messenger messenger = new Messager(MYHandler());
+
+Step3: Return IBinder through message in onBind()
+      public IBinder onBind(Intent intent){
+       messenger.getBinder();
+       }
+
+
+
+Steps for Activity of other app to connect to service:
+
+Step1:Create 2 Messenger objects. One to send request to service , other to receive response from the service.
+Messenger  serviceRequestMessenger,serviceReceiveMesssenger.
+
+Step2: Create a Handler to receive data from Service 
+     class ReceiveHandler extends Handler{
+      public void onHandleMessage(Message msg){
+      switch(msg.what){
+      case MyConstant:
+         receivedInfo = msg.arg1;  
+      }
+    }
+       }
+
+Step3: Create a service connection
+ServiceConnection sc = new ServiceConnection(){ 
+  public void     onServiceConnected(ComponentName componet,IBinder iBinder){ serviceRequestMessenger = new Messenger(iBinder);
+  serviceReceiveMessenger = new Messenger(new MyHandler());
+ }
+  public void onServiceDisconnected(ComponentName componet){}
+   }
+
+
+Step4: Create  explicit Intent
+Intent intent  = new Intent();
+intent.setComponent("packageNameOfService", "packageNameOfService.RemoteService);
+
+Step5: Bind to Remote service
+    bindService(intent,sc,BIND_AUTO_CREATE);
+
+
+Step6: Make a request to service
+private  void makeRequest(){
+ Message requestMessge = Message.obtain(null,MyCONSTNT);
+ requestMssge.replyTo = serviceReceiveMesssenger
+
+  serviceRequestMessenger.send(requestMessage);
+}

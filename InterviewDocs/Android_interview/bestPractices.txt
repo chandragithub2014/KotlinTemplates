@@ -1,0 +1,70 @@
+Android Best PRactices:
+
+Android Vitals:
+Focus on 5 areas:
+Stability
+Battery
+Rendering
+Startuptime
+Permission
+
+Stability 
+  Is About:
+    ANR Reports &     Crashes 
+
+When ANR happens?
+ When Main threads blocks and can't take input events or redraw UI for few seconds.
+Reason of ANR
+(1) Blocking operations on Main Thread:
+      Avoid Network or discOperations on Main Thread.
+      To detect and ensure not doing this use Strict mode in debug build.
+(2) Long Calculations - 
+    Avoid long calculations on main thread. StrictMode has noteSlowCall() method to detect slow calls.
+(3)Inter Process Communication (IPC) - Don't communicate with other apps to perform some task synchronously on Main Thread. Do this in bg.
+(4)Slow BroadcastReceiver handling - Broadcast receiver runs on main thread you should never perform long-running operation on it.There is a time out of 10 seconds that
+
+(2) Rendering:
+ In  UI redering APP gets  a frame and displays on UI screen. For smooth rendering of UI App should render 60 frames per second. If it is not happening Android Sys. skips some frames which may lead to UI that is not responsive . This is called JanK Situation.
+
+How to detect Jank?
+(1) Visual Inspection
+    Run the release version of the app as debug version optimizes lot of features.Run through each and every screen of the app and check for Janky condition.
+Enable GPU rendering , that displays bars that shows how much time a frame takes to render.If more number of bars means more time . 
+
+(2) System Trace
+    It is tool that shows what entire device is doing. It displays the rendering time by processes and threads. We need to look for your App's process in Sys trace to identify Janky condition.
+
+Recycler View :
+In recycler View , if the data set that is to be  displayed in RecyclerView is changed we call notifyDataSetChanged() .So, in that case RecyclerView removes all its cached data and rebinds all its views with latest data.If there is only one item is changed in dataset , rebinding all the data to views is Janky situattion.
+Solution:
+use DiffUtils  which compares exisiting and latest data and performs only minimum update which may reduce Janky condition.
+Also Janky condition occurs when more views to binded with data in onBindViewHolder() ,becoz inflating views is time consuming task and it leads to JAnky condition. USe DataBinding with POJO classs to avoid Janky.
+Also consider using constraint layout for list items.
+
+Frozen Frames : These are the frames that takes more than 700ms to render. Typically for smooth rendering a Frame should take 16ms. 
+These Frozen Frames occur when there is transition in the App like onClick of button App navigates from one screen to other. Generally during this transition generally a frame takes more than 16ms to render as it is new screen and needs to inflate the layout . But more than 700 ms means almost 1 second where user will not be able to do anything on the screen which led to frozen screen scenario.
+The solution is same as the slow rendering . 
+If we are doing network operations on MAin Thread on screen launch , do that in separate Thread.
+USe Constraint layout to render views smoothly.
+
+
+Permission Denial:
+Android App want users to accept permissions so tht it can function properly.
+But users may not accept all the permissions and could deny some or all due to privacy or personal or not comfortable and various other issues. Due to which users deny permissions.
+Android Vitals provides statistics of how many permissions accepted and denyed in the google play console.App developer should accept zero permission denyl becoz it depends on user choice to accept permissions.
+
+Your app should not have so many permissions to accept . Use one or two permissions at max 3 so that user will not feel discomfort.
+
+Dont try to display all permissions at the start. Display pemissions when needed such as in some feature if user needs permissions to access that feature , display permissions at that instance not at the start.
+
+If the user denies the permission , becoz of which core functionality of the app is missing , then additional info to be provided to the user that states the importance of that permission.
+
+Starting from Android 6 runtime permissions provide various methods to do that.
+
+Try using intents when needed rather than app implementing on its own.
+If the app has a feature to capture photos , then rather than implementing the camera UI on your own and asking user permission to access camera, call camera intent that launches camera APP so tht there is no need to ask user permission for this.
+
+Also for making a call or sending a SMS rather than implementing and maintaing UI use intents.
+
+If we want to access contacts and modify definitely we need to ask user READ_CONTACTS/WRITE_CONTACTS permission .
+

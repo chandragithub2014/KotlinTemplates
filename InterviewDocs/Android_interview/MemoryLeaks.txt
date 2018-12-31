@@ -1,0 +1,3 @@
+https://blog.aritraroy.in/everything-you-need-to-know-about-memory-leaks-in-android-apps-655f191ca859
+
+https://medium.com/freenet-engineering/memory-leaks-in-android-identify-treat-and-avoid-d0b1233acc8

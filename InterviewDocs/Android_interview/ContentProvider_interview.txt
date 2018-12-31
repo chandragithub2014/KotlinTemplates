@@ -1,0 +1,70 @@
+
+Content Provider:
+A content provider manags shared set of app data that u can store in a file sys,Sqlite DB,Webserver or any persistance storage that ur app can access.
+Through content provider other apps can query/modify the data if content provider allows it.
+
+
+In Android each app is hosted in separate process.
+Each app will have its own data base.
+There could be scenario where app1 wants to access App2 Database which is not possible as App2 DB is private to it.
+
+This is possible only through ContentResolver . App1 uses ContentResolver to make a request to App2, App2 will have Content provider which responds back with Data to App1 in the form of Cursor.
+
+
+Ex: App2 is contacts App, APP1 can access contacts only through Content Resolver in order to modify or access Contacts.
+
+Use Context.getContentResolver() to get the Content Resolver.
+In order to hit the exact Content PRovider ,we need to have URI (Uniform Resoource Identifier) 
+
+Content REsolver provides some methods to perform CRUD operations on Content Provider.
+
+
+Format to Query a Content Provider using Content Resolver.
+getContentResolver().query(Content PRovide URI, mProjection,mSelction,mSelectionARGS,mSortOrder)   returns Cursor object.
+
+
+Example to access Contacts Content Provider:
+Cursor c = getContentResolver.query(ContactsContract.Contacts.CONTENT_URI,mColmProectionm,null,null,null)
+
+
+Custom Content Provider:
+
+Step1 :Create a class that extends ContentProvider.
+Step 2: Create Content URI
+         Step1: Content   content://
+         Step2: Authority  package Name : com.andr.customcprovider
+         Step  :Path        user defined String constants
+Step 3: Forming content URI
+        Create PAth constants:
+        String PATH_FETCH_ALL = "FETCH_ALL"
+        String PATH_FETCH_SOME = "FETCH_PLACE"
+        String PATH_FETCH_COUNT  = "FETCH_COUNT"
+     Uri CONTENT_URI_1 = Uri.parse("content://"+AUTHORITY+"/"+PATH_FETCH_ALL)
+     Uri CONTENT_URI_2 = "content://"+AUTHORITY+"/"+PATH_FETCH_SOME
+     Uri CONTENT_URI_3 = "content://"+AUTHORITY+"/"+PATH_FETCH_COUNT
+
+Step4: When a request comes from contentResolver , we need to match the URI with different datasets 
+For that we use URI matcher.
+
+Step5: Match each contentURI with integer constants.
+Step6:Integer constants
+      public static final int TO_DO_FETCH_ALL  =1 
+          int TO_DO_FETCH_SOME  = 2 
+          int TO_DO_FETCH_COUNT  = 3
+UriMather urimatch = new UriMatcher(UriMatcher.NO_MATCH);
+static{
+  urimatch.addURI(AUTHORITY,PATH_FETCH_ALL, TO_DO_FETCH_ALL)
+    urimatch.addURI(AUTHORITY,PATH_FETCH_SOME, TO_DO_FETCH_SOME  )
+        urimatch.addURI(AUTHORITY,PATH_FETCH_COUNT  , TO_DO_FETCH_COUNT  )
+}       
+
+
+
+Methods to be overridden in ContentProvider
+
+(1) onCreate
+(2) query   :  Methods that return cursor
+(3) insert  : MEhods that return Uri
+(4)update  :  Method that return int no of rows that get updaed when we execut  this . 
+(5) delete   : Method that return int no of rows that get deleted when we execut  this . 
+(6)getType

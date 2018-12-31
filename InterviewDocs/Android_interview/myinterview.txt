@@ -1,0 +1,234 @@
+github
+genkins
+Datastructures,algorithms(Depth first search,search graphs)
+Coding standards
+Design patterns
+Security in Android
+
+
+
+Difference between Service and Intent SErvice
+A Service is a component that runs in the bg perform long running operations.
+A service does n't have a UI. Another component like Activity starts a service by calling startService() method by passing intent to it.
+A service runs indefinitely though the component that started the service is destroyed.
+OnStartCommand(),onBind(),onCreate(),onDestroy()
+There are 2 ways we can create a service
+- Extends Service Class
+- Extends IntentService Class.
+When we create a service that extends Service calls, the service runs on main thread which results in blocking the UI. So, the background long running operation that service performs should be done in separate thead. 
+Also the service runs indefintely till the operation is completed. We need to stop explicitly by callng stop Service or service stops itself by stopSelf()
+
+When we create a service that extends IntentService , it creates a worker thread and handles one intent at a time that is received as part from onStartCommand() .
+The service stops when all the requests are processed.
+No need to implement threading logic here.
+over ride onHandleIntent() method to perform long running operation.
+
+
+ASync Task when screen rotated
+Asyc Tasks allow you to perform  perform bg operations and publish results to UI thread. RAther than handling Threads and HAndlers Asyctasks provides different methods to perform backround operations.
+onPreexecute() --> Runs on UI
+doInBackGround(Params.. params) --> Performs bg operations and returns results. publishes progress by publishProgress()
+onProgressUpdate() --> Called when doInBG() updates  progress
+OnPostExecute() --> Publishes returned result from doInBG() to UI Thread.
+Extends AsyncTask<PAramss of doInBG, publish results Type, return Type of DoInBG)
+Host AsyncTask in Fragment. Call setRetainInstance(true) in Fragment and report the Async Task REsults to Activity through the retained Fragment
+.
+LifeCycle of fragment
+onAttach()
+onCreate()
+onCreateView()
+onActivityCreated()
+onStart()
+onREsume()
+onPause()
+onStop()
+onDestroyView()
+onDestroy()
+onDetach()
+
+Pass data between subactivities .
+Bundle b = new Bundle()
+b.putString("name", "abc")
+intent.putExtras(b)
+startActivity(intent)
+
+
+Bundle b  = getIntent().getExtras()
+String name = b.getString("name")
+
+
+Intent intent = new Intent(this,secondActivity.class)
+intent.putExtra("student",Student)
+startActivity(intent)
+
+Student st  = (Student) getIntent().getParcelableExtra("student")
+
+Difference between Parcelable and serializable
+When we want to pass custom obects says POJO obects between Activities, the POJO should implement either Parcelable or Serializable interface.
+Serializable interface is not part of Android SDK. The problem with Serializable interface is it uses reflection during serialization and creates additional objects which impacts performace and drains battery.
+On the other hand Parcelable does not use reflection and .
+When we use paracelable interface we need to write boiler plate code.
+override fun describleContents(){  }
+Parcelable.CREATOR<Person> CREATOR = new Parcelable.CREATOR<Person>(){
+       @Override
+        public Person createFromParcel(Parcel source) {
+            return new Person(source);
+        }
+
+        @Override
+        public Person[] newArray(int size) {
+            return new Person[size];
+        }
+
+}
+writeToPArcel(Parcel p){
+   p.WriteToString(this.name)
+}
+
+protected Person(Parcel in) {
+pname =     in.readString()
+   
+}
+ 
+What is REcycler View?
+Recycler View is a flexible and more advanced version of ListView. In RecyclerView different components work together to display data. RecyclerView fills it self with the views provided by LayoutMangers like LinearLayout MAnager or GridLAyout Manager . Each view is represented by ViewHolder object.The ViewHolder is instance of the class that extends  RecyclerView.ViewHolder.  The ViewHolder represents each ListItem. RecyclerView creates as many ViewHolders to be displayed onscreen.When the user scrolls downlist REcycler view uses the ViewHolders that are gone off-screen and rebinds the data to them.  The ViewHoldres are managed by AdapterClass created using RecyclerView.Adapter.
+public class MyAdapter extends REcyclerView.Adapter<MyAdapter.ViewHolder>{
+MyAdapter.ViewHolder onCreateViewHolder(ViewGroup container, int ViewType)  {
+
+       View itemView = LayoutInflater.from(container.getContext()).inflate(R.layout.list_item,container,false)
+      return itemView .ViewHolder
+}
+
+
+public void onBindViewHolder(MyAdapter.ViewHolder holder,int position){
+      textView.holder.setTExtText(myData.get(position))
+}
+class MyViewHolder extends RecyclerView.ViewHolder{
+TextView label
+    public MyViewHolder(View view){
+         super(view)
+         label = (TextView)view.findViewById(R.id.myTextView)
+  
+      }
+
+}
+
+RecyclerView rc = findViewById(R.id.movieRecycler)
+rc.setLayoutManager(new LinearLayoutManager(getApplicationContext))
+rc.setAdapter(new MovieAdapter(movieList))
+
+What is findViewByID?
+Its the unique id that is given to the view in the layout such as for button,edittext etc.
+To refer any view in our Activity/Fragment java file we need to use this id .
+R is a generated class in Android that is having ids for all the views which we can refer using R.id.myButton
+
+Webservices in Android ?
+Retrofit: 
+  (1) Is a Rest Client developed for Android And Java by Square
+  (2) Retrofit uses OKHttp library for Http requests
+  (3) Retrofit is besttool for performing network operations in Android
+We need 3 Things for RetorFit
+(1) Retrofit Instance
+     Create Retrofit instance by Retrofit.Builder
+     Also specify Base URL and converter factory @ the time of instance creation
+      Retrofit retrofit = new Retrofit.Builder().baseURL(url).addConverterFactory(GSONConverterFactory.create()).build()
+(2) Model class
+    Retrofit uses POJO class for sending and receiving request.
+    Retrofit uses POJO class to parse the response using converters such as GSONConverter,JAckson and so on.
+   public class Student{
+     @serializedName
+     private String name;
+      
+      public String getName(){
+            return name;
+           }
+  
+    }
+   serialized annotation is used by gson converters   for serialization and deserialization
+(3) Create an interface to make API Calls
+        (1) Contain methods for API Calls
+        (2) Need to specify end point URL along with request type such as GET,POST in annotation .
+        (3) The return type of method is Call class.
+              interface APIInterface{              
+              @POST("getstudents.com")
+              call List<Student> get studentInfo()
+               }
+
+Make A Request:
+(1) Obtain instance of interface to make a needed API call trough interfce methods.
+ APIInterface apiInterface = APIClient.getAPIClient().create(APIInterface.class);
+Call<List<Student>> call = apiInterface.getStudentnInfo()
+
+Retrofit makes network request and wait for response of background thread and deliver the result to onResponse() and onFailure() methods on Main UI Thread.
+
+
+DataStorage in Android:
+(1) Shared Preferences
+(2) Files (Internal & External)
+      FileOutputStream fos = openFileOutPut("Filename",Context.MODE_PRIVATE);
+      String s = "Hello";
+      fos.write(s.getBytes);
+
+     FileInputStream fis = openFileInput("MyFile.txt")
+     while(file.read()!=-1){
+       sb.append((char)file.read());
+     }
+(3) SQLite DB
+
+Reduce APK Size:
+(1) Remove unused resources
+       Android studio run the lint tool ,that provides list of resources that are unused.
+(2) Remove unused resource in the libraries
+     Done with a setting in build.gradle : ShrinkableResources true, minifyEnabled true
+(3) Android supports various drawable resource folders like ldpi,mdpi,hdpi,xhdpi,xxhdpi. Rather than creating resources for all the folders better create resources fro most important folders. Android Sys. automatically scales the resources for the folders for which resources are not created.
+(4) Use vector drawable so that it reduces lot of size and create resolution independent icons.
+(5) Use appt tool and use png cruncher to true so that it reduces the size of the apk size.
+
+Data Security of App:
+(1) From Android 6.0 full disk encryption is enabled by default.So, the data that is stored in shared preferences and Files is default CONTEXT.MODE_PRIVATE.
+   The data can be accessed by only your app.
+(2) Avoid storing data in external storage. Prevent users from installing APP in external storage by setting  android:installLocation= "internalOnly" .
+(3) Prevent app and its data being  backup which can be backed up using adb backup. set android:allowBackup attribute to false by default its set to true.
+https://code.tutsplus.com/tutorials/storing-data-securely-on-android--cms-30558
+
+
+Localization in Android (Specificall for Arabic) ?
+Best Practices of Coding standards
+Dependency Injection
+Memory management
+Design patterns
+Examples of Implicit Intents?
+What is HashMap and how it works ?
+
+Difference between Abstract class and interface
+(1) Interface can have only Abstract methods, Abstract class can have both Abstract and non-abstract methods
+(2) Variables declared in interface are by default final, where as abstract class can have non-final values.
+(3) interface can extend only one interface, where as abstract can extend a class and can implement multiple interfaces.
+(4) members of interface are public final by default , where as abstract class can have public,private and protected members.
+
+what is immutable class
+Immutable class is a class for which once we create an object, we cannot modify the content. Example is String class. Once we create an instance we cannot modify the content.
+We can also create our own immutable class:
+(1) create a class declare as final 
+(2) Use final variables .so that their value cant be changed after object creation.
+(3) use public parameterized constructor
+(4) This class should have only getter functions, no setters.
+
+finally : Block is used to put some clean up code such as closing a file,DB etc. Its followed by try/catch. Its executed always . If an exception occurs after handking the exception this code is executed. If exception is not handled then also the code that is written in finally block is executed. 
+The code in finally block is alwys executed whether exeception is handled or not.
+
+Voatile: If there is a shared variable and multiple threads are modifying the shared variable, if the changes made  to that variable by a Thread to be reflected on the other thread or all threads modyfying that varaible , we need to declare that variable as volatile keyword.
+
+Transient: During serialization if we dont want to save the value of that variable in the file , then we declare that variable as Transient.  During serialization when JVM encounters the variable with keyword Transient , it writes defualt values of that variable in file rather than writing actual value.
+
+can we override static methods?
+static methods are not associated with instance of a class, so overriding static methods is not possible.
+Overriding is used when we extend a class and the subclass will have different behaviors for the same methods defined in superclass.
+
+Can we create class in the interface ?
+Yes,we can create a class in the interface. (Called Nested class) . Used in situation where we want porgrammers or the class who use this interface  only use the class  its methods and funtionality.
+
+What is deadlock?
+Deadloack is a part of multithreading in Java. When Thread 1 is waiting for an object lock acquired by Thread2 and Thread2 is wating for an object lock acquired by Thread1 . In both the threads are waiting each other to release the lock, which caused deadlock situation.
+
+synchronize(null): Java will throw null pointer excepton if obeject used in schronized(INSTANCE) is null.

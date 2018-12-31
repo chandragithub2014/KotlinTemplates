@@ -1,0 +1,21 @@
+Difference between MVP & MVVM
+MVP                                                         MVVM
+ModelViewPresenter											ModelViewViewModel
+View:Fragment/Activity										View : Represents Fragment/Activity	
+View: Takes lays its views									Notifies ViewModel about actions	
+with data from prsenter										ViewModel: Exposes stream of data, which can be consumed by the observing views.
+Presenter: Acts as bridge b/w View&Model
+Listening for  user interactions and updates 
+both Model and View.
+Model : Handles the data Part of the APP					Model : Handles the data Part of the APP
+
+
+
+
+View and Presenter are tightly coupled						View and ViewModel are losely coupled.
+Presenter holds View's reference							ViewModel doesn't hold any View reference.
+Presenter needs to check whether view is                    No need to check whether View is alive , always notifies view with latest info through LiveData.
+alive or not.
+
+
+Too many interfaces											All interfacs that MVP pattern uses are dropped. 
