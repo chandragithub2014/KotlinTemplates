@@ -194,11 +194,46 @@ https://code.tutsplus.com/tutorials/storing-data-securely-on-android--cms-30558
 
 Localization in Android (Specificall for Arabic) ?
 Best Practices of Coding standards
-Dependency Injection
 Memory management
 Design patterns
 Examples of Implicit Intents?
 What is HashMap and how it works ?
+
+Factory Design Pattern:
+In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+There will be an Abstract class or interface which returns the instance of a class based on some input without providing details about creation logic.
+interace Template{
+  Fragment getTemplate()
+}
+
+public class ListTemplate implements Template{
+  @override
+    Fragment getTemplate(){
+       Fragment frag = ListFragment.newInstance();
+       return frag;
+   }
+}
+
+public class Factory{
+     
+     public Fragment getFragment(String templatType){
+               if(templateType.equalsIgnoreCase("List") {
+                 return new ListTemplate().getTemplate();   
+                }
+         }
+   
+}
+
+Dependency Injection:(https://inducesmile.com/android/android-dagger-2-dependency-injection-with-retrofit-for-beginners/)
+Dependency Injection is a software design pattern that is built on the concept of inversion of control,where the dependency objects are supplied by external entity,rather than the  creating instance of dependent class objects.
+
+@Module : This is used on the class that does the work of constructing objects that’ll be eventually provided as dependencies.
+@Provides : This is used on the methods inside the Module class that’ll return the object.
+@Inject : This is used upon a constructor, field or a method and indicates that dependency has been requested.
+@Component : The Module class doesn’t provide the dependency directly to the class that’s requesting it. For this, a Component interface is used that acts as a bridge between @Module and @Inject.
+@Singleton : This indicates that only a single instance of the dependency object would be created.
+
+
 
 Difference between Abstract class and interface
 (1) Interface can have only Abstract methods, Abstract class can have both Abstract and non-abstract methods
@@ -232,3 +267,9 @@ What is deadlock?
 Deadloack is a part of multithreading in Java. When Thread 1 is waiting for an object lock acquired by Thread2 and Thread2 is wating for an object lock acquired by Thread1 . In both the threads are waiting each other to release the lock, which caused deadlock situation.
 
 synchronize(null): Java will throw null pointer excepton if obeject used in schronized(INSTANCE) is null.
+
+
+
+MultiThreading:
+Process is Program in Execution.
+Thread is a single task of execution within a process.

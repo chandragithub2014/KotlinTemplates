@@ -40,7 +40,8 @@
         <activity
             android:name=".SlidingMenuType2.SlidingMenuType2Activity"
             android:label="@string/title_activity_sliding_menu_type2"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".DIRecyclerView.View.DIContainerActivity"></activity>
     </application>
 
 </manifest>

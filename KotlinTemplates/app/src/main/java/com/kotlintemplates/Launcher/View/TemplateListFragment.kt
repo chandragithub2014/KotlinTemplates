@@ -15,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.kotlintemplates.DIRecyclerView.View.DIContainerActivity
 import com.kotlintemplates.DIRecyclerView.View.RetroDIListActivity
 //import com.kotlintemplates.DIRetroitList.View.RetroFitActivity
 import com.kotlintemplates.DInjection.View.View.DIActivity
@@ -136,7 +137,7 @@ class TemplateListFragment : Fragment(),ClickListener {
             startActivity(difUtilIntent)
         }else if(position==8){
         //   var daggerIntent : Intent = Intent(activity,DIActivity::class.java)
-            var daggerIntent : Intent = Intent(activity, RetroDIListActivity::class.java)
+            var daggerIntent : Intent = Intent(activity, DIContainerActivity::class.java)
             startActivity(daggerIntent)
 
         }else if(position == 9){
