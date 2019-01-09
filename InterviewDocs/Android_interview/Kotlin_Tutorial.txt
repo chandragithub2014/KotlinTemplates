@@ -1,0 +1,53 @@
+Kotlin Features
+================
+
+(1) Kotlin is Open Source
+(2) Full Java Interoperability
+(3) Kotlin compiles to JVM byte Code or JavaScript
+(4) Data Classes in Kotlin
+(5) Null Safety in Kotlin
+(6) Extension functions
+(7) Kotlin wants you to write less code
+
+
+What is Kotlin:
+  - Kotlin is open source Programming language like Java,Java Script.
+  - Its high level statically typed language that combines funtional and       technical part in same place.
+  - It runs on JVM
+
+Advantage:
+Easy Language:
+Kotlin is functional language and it is very easy to learn.
+The syntax is pretty similar to Java and it easy to remember.
+Kotlin is expressive which makes code more readable and understandable.
+
+Consise:
+Kotlin reduces lot of boiler plate code used in other programming languages.
+
+Runtime and performance:
+Better performance and small run time.
+
+Interoperability:
+Kotlin can buld interoperability application in a less complex manner.
+We can parts of our code in Java and parts of our code in kotlin as well.
+
+
+Brand New :
+Kotlin is a brand new language. Its not replacement to Java, though it is developed over JVM. Its accepted as first official language of Android developement.
+
+
+Kotlin Architecture:
+Kotlin files have extension as .kt.
+The Kotlin compiler converts kotlin class file to byte code  that can be run on JVM. 
+Its similar to Java compiler that converts .class file to byte code to be run on JVM.
+
+
+
+https://www.tutorialspoint.com/kotlin/kotlin_basic_types.htm
+
+
+shell i log off
+ok
+
+Inte
+
