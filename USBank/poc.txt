@@ -1,0 +1,62 @@
+ProofOfConcept:
+
+The POC should contain 3 screens:
+(1) Login Screen
+(2) List Screen
+(3) List Detail Screen
+
+
+Login Screen:
+
+UI and functionality:
+
+- Design a user interface layout with  2 input fields username and password  and a button with name login.
+- Click on login button should navigate to  List screen.
+
+Implementation:
+
+-  Code should be implemented in Kotlin
+-  Use MVVM design pattern to structure and organize  the code where View should contain only UI , all the logic related to validation of user credentials to be done in view model.
+
+
+
+List Screen:
+- This screen should list of information from web service.
+
+Implementation:
+ -  Code should be implemented in Kotlin.
+ -  Use MVVM design pattern to structure and organize the code 
+ -  Use RecyclerView to populate list with information.
+ -  Use Retrofit to fetch data from webservice
+ -  Use ViewModel with LiveData .
+ -  Use Dagger2 dependency injection to inject retrofit to the corresponding fragment.
+
+
+      Dummy Webservice URL: https://jsonplaceholder.typicode.com/posts
+
+List Detail Screen:
+   - This screen displays information about clicked list item.
+   - Create user interface to display information about list item. 
+
+Implementation:
+     -  Code should be implemented in Kotlin.
+     -  Use MVVM design pattern to structure and organize the code 
+     -  Use data binding library to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+
+
+
+
+Gradle:
+
+
+
+
+
+     
+
+ 
+
+
+    
+
+
