@@ -1,0 +1,27 @@
+
+User can add new recipients
+Efforts:
+
+(1) User interface layout design for portrait mode
+(2) User interface layout design for Landscape mode
+(2) Mandatory Field validation
+(3) To implement functionality to add new mobile number.
+(4) To implement functionality to add new Email Address
+(5) To implement functionality to delete existing mobile number.
+(6) To implement functionality to delete existing Email Address
+(7)To implement functionality to add a receipient from contacts.
+(8)To implement Webservice  communication to post the added receipient information
+(9)To implement Unit test cases
+(10)To implemenet UI test cases
+(11)Test the functionality
+(12)Defect fixing .
+
+
+
+
+Assumptions:
+(1) To implement user interface as per existing iOS screens
+(2) To implement functionality as per existing  iOS functionality
+(3) Support for Android OS versions 6,7,8
+(4)
+  
