@@ -2,26 +2,44 @@
 User can add new recipients
 Efforts:
 
-(1) User interface layout design for portrait mode
-(2) User interface layout design for Landscape mode
-(2) Mandatory Field validation
-(3) To implement functionality to add new mobile number.
-(4) To implement functionality to add new Email Address
-(5) To implement functionality to delete existing mobile number.
-(6) To implement functionality to delete existing Email Address
-(7)To implement functionality to add a receipient from contacts.
-(8)To implement Webservice  communication to post the added receipient information
-(9)To implement Unit test cases
-(10)To implemenet UI test cases
-(11)Test the functionality
-(12)Defect fixing .
+(1) User interface layout design for portrait mode & Landscape mode - C
+(2) Mandatory Field validation - A
+(3) To implement functionality to dynamically update user interface to add new mobile number. - C
+(4) To implement functionality to dynamically update user interface to add new Email Address   - C
+(5) To implement functionality to dynamically update user interface to delete existing mobile number.  C
+(6) To implement functionality to dynamically update user interface to delete existing Email Address  C
+(7)To implement functionality to add a receipient from contacts. - C
+(8)To implement Webservice  communication to post the added receipient information   - A
+(9)To implement Unit test cases  - A  
+(10)To implemenet UI test cases  - C
+(11)Unit Testing - A
+(12)Defect fixing  - C
 
 
 
 
 Assumptions:
-(1) To implement user interface as per existing iOS screens
-(2) To implement functionality as per existing  iOS functionality
+(1) To implement user interface as is in iOS screens. Efforts may vary for  Native Android User interface .
+(2) To implement functionality as is in existing  iOS functionality.Efforts vary for a change in functionality.
 (3) Support for Android OS versions 6,7,8
-(4)
-  
+(4) No support for local DB
+(5) Mandatory validation for Firstname,LastName,atleast one mobile number,email before saving data to webserver. Efforts vary for a change in functionality in Add/Edit Receipents screens
+
+
+ User can edit existing recipient information:
+(1) User interface layout design for portrait mode & Landscape mode - C
+(2)Mandatory validation for Firstname,LastName,atleast one mobile number,email - A
+(3) To implement functionality to dynamically update user interface to add new mobile number and save it. - C
+(4) To implement functionality to dynamically update user interface to add new Email Address and save it  - C
+(5) To implement functionality to dynamically update user interface to delete existing mobile number and save it.  C
+(6) To implement functionality to dynamically update user interface to delete existing Email Address and save it  C
+(7)To implement functionality to add a receipient from contacts. - C
+(8)Fetch selected recipient info through webservice call - C
+(9) populate received recipientsto respective user interface elements as user interface changes dynamically based on response. - C
+(10)To implement Unit test cases  - A  
+(11)To implemenet UI test cases  - C
+(12)Unit Testing - A
+(13)Defect fixing  - C
+
+
+
