@@ -64,6 +64,10 @@ DataClasses:
 Data classes are use to just hold data nothing else.
 In Java we have POJO classes where getter and setter methods needs to be implemented expicitly and we may need to implements equals,toString and Copy separately.  But in Kotlin data classes all these functions are implemented automatically thus reducing redundant code.
 
+Companion Objects:
+Unlike Java or C#, Kotlin doesn’t have static members or member functions. 
+If you need a function or a property to be tied to a class rather than to instances of it (similar to @staticmethod in Python), you can declare it inside a companion object:
+
 Sealed Classes:
 Sealed classes represent restricted class hierarchy,when a value can have a type from limited set and cannot have any other type.
 Sealed classes are extensions of Enum class. Each enum constant can have only single instance.
@@ -109,3 +113,26 @@ suspend fun preparePost():Token{
 
 https://android.jlelse.eu/kotlin-coroutines-and-retrofit-e0702d0b8e8f
 https://www.youtube.com/watch?v=jT2gHPQ4Z1Q
+
+
+SmartCasts:
+In Kotlin, You can check whether an object is of a certain type at runtime by using the is operator.
+
+one does not need to use explicit cast operators in Kotlin, because the compiler tracks the is-checks and explicit casts for immutable values and inserts (safe) casts automatically when needed:
+
+
+Kotlin Range Expressions:
+Kotlin Ranges could be useful in expression evaluation and looping statements
+
+Kotlin Ranges could be found in three forms.
+ m..n
+ n downTo m
+ m until n
+
+
+Operator OverLoading:
+//https://www.codingame.com/playgrounds/6847/kotlin-operator-overloading
+
+Kotlin allows us to overload some operators on any object we have created, or that we know of (through extensions). The concept of operator overloading provides a way to invoke functions to perform arithmetic operation, equality checks or comparison on whatever object we want, through symbols like +, -, /, *, %, <, >. But, obviously, those overloading should be defined when it make sense to use them.
+
+https://www.baeldung.com/kotlin-operator-overloading
