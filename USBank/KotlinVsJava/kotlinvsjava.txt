@@ -1,0 +1,111 @@
+Kotlin Vs Java :
+
+Kotlin is simpler and cleaner than Java.
+Kotlin removes lot of redundancies in code from Java.
+Kotlin also adds some features that are yet to support in Java.
+
+Features in Kotlin but not in Java:
+
+Extension Functions
+Null Safety
+Smart casts
+Range expresssions
+operatator overloading
+Data Classes
+Companion objects
+Coroutines.
+
+Kinds of Programming Kotlin support:
+1.Procedural Programming
+2.Object oriented programming.
+
+Entry Point to a Kotlin Program
+fun main(args:Array<String>){
+   var user1 = User(name="A",age=10)
+   printUser(user1)
+}
+
+fun printUser(user:User){
+  println(user)
+}
+
+data class User(val name:String,val age:int)
+
+
+Extension Function:
+Kotlin provides the ability to extend  a class with new funtionality without having to inherit from class. This is done via special declaration called extensions.
+
+Kotlin supports extension functions and extension properties.
+
+fun MutableList<T>.swap(index1:int,index2:int){
+  val temp = this[index1]
+  this[index1]=this[index2]
+  this[index2] = temp
+}
+
+Usage:
+val l = mutableListOf(1,2,3)
+l.swap(0,3)
+
+
+Example of a class with Primary & secondary constructor
+
+class person constructor(name:String,age:int){
+ var profession:String = "Hi"
+  constructor(profession:String):this(name,age){
+   this.profession = profession
+
+ }
+
+
+}
+
+DataClasses:
+Data classes are use to just hold data nothing else.
+In Java we have POJO classes where getter and setter methods needs to be implemented expicitly and we may need to implements equals,toString and Copy separately.  But in Kotlin data classes all these functions are implemented automatically thus reducing redundant code.
+
+Sealed Classes:
+Sealed classes represent restricted class hierarchy,when a value can have a type from limited set and cannot have any other type.
+Sealed classes are extensions of Enum class. Each enum constant can have only single instance.
+Subclass of sealed class can have multiple instances.
+
+
+sealed class ArithmeticOperation
+ 
+class Add(var a: Int, var b: Int): ArithmeticOperation()
+class Subtract(var a: Int, var b: Int): ArithmeticOperation()
+class Multiply(var a: Int, var b: Int): ArithmeticOperation()
+class Divide(var a: Int, var b: Int): ArithmeticOperation()
+
+
+fun execute(op:ArithmeticOperation):when(op){
+  is Add -> op.A + op.B
+  is Subtract -> op.A - op.B
+ 
+}
+
+
+Higher Order Functions:
+A funtion that takes another function as an argument.
+
+
+
+coroutines:
+Kotlin's approach to working with asynchronous code is using coroutines.
+The idea is that a  function can suspend its execution at some point and resume later on.
+
+Ex:
+  fun postItem(item:Item){
+    launch{
+       val token = preparePost()
+       val post = submitPost(token,item)
+           }
+    }
+
+suspend fun preparePost():Token{
+  return token
+}
+
+
+https://android.jlelse.eu/kotlin-coroutines-and-retrofit-e0702d0b8e8f
+https://www.youtube.com/watch?v=jT2gHPQ4Z1Q
